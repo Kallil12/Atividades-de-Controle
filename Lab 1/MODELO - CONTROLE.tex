@@ -33,6 +33,7 @@
 \usepackage{subfig}
 \usepackage{mathptmx}
 \usepackage{changepage}
+\usepackage{float}
 %\usepackage[alf]{abntex2cite}
 
 %%%%%%%%%%% PDF METADATA %%%%%%%%%%%%%
@@ -85,12 +86,13 @@ CURSO DE ENGENHARIA DE COMPUTAÇÃO
 
 \vspace{3.6cm}
 
-{\bf{\large RELATÓRIO DA Nº EXPERIÊNCIA\\
-TÍTULO DA EXPERIÊNCIA\\
+{\bf{\large RELATÓRIO DA 1ª EXPERIÊNCIA\\
+Modelagem de Sistemas Dinâmicos: \\ 
+Simulação de um Sistema de Tanques Acoplados\\
 }}
 \vspace{1.5cm}
-{\large TURMA: \\
-	GRUPO Nº}
+{\large TURMA: 04 \\
+	GRUPO Nº 2}
 
 \vspace{3.6cm}
 
@@ -98,13 +100,11 @@ TÍTULO DA EXPERIÊNCIA\\
 
 \begin{flushright}
 \begin{normalsize}
-NOME COMPLETO 1º ALUNO: Nº MATRÍCULA\\
+José E. de A. Junior: 20170009356\\
 \vspace{0.8cm}
-NOME COMPLETO 2º ALUNO: Nº MATRÍCULA\\
+Kallil de A. Bezerra: 20180154987\\
 \vspace{0.8cm}
-NOME COMPLETO 3º ALUNO: Nº MATRÍCULA\\
-\vspace{0.8cm}
-NOME COMPLETO 4º ALUNO: Nº MATRÍCULA\\
+Victor K. C. Sousa: 20180155278\\
 \end{normalsize}
 \end{flushright}
 
@@ -124,20 +124,17 @@ NOME COMPLETO 4º ALUNO: Nº MATRÍCULA\\
 
 \begin{center}
 \begin{normalsize}
-NOME COMPLETO 1º ALUNO: Nº MATRÍCULA\\
+José E. de A. Junior: 20170009356\\
 \vspace{0.8cm}
-NOME COMPLETO 2º ALUNO: Nº MATRÍCULA\\
+Kallil de A. Bezerra: 20180154987\\
 \vspace{0.8cm}
-NOME COMPLETO 3º ALUNO: Nº MATRÍCULA\\
-\vspace{0.8cm}
-NOME COMPLETO 4º ALUNO: Nº MATRÍCULA\\
-
+Victor K. C. Sousa: 20180155278\\
 \end{normalsize}
 \end{center}
 \vspace{3cm}
 
-{\bf{\large {\centering TÍTULO DA EXPERIÊNCIA\\}}}
-
+{\bf{\large {\centering Modelagem de Sistemas Dinâmicos: \\ 
+			Simulação de um Sistema de Tanques Acoplados\\}}}
 \vspace{4cm}
 
 \begin{adjustwidth}{7.5cm}{0cm}
@@ -146,7 +143,7 @@ NOME COMPLETO 4º ALUNO: Nº MATRÍCULA\\
 
 Primeiro Relatório Parcial apresentado à disciplina de
 Laboratório de Sistemas de Controle, correspondente à
-avaliação da 1º unidade do semestre 2016.1 do 7º período
+avaliação da 1º unidade do semestre 2020.6 do 7º período
 do curso de Engenharia de Computação e Automação da
 Universidade Federal do Rio Grande do Norte, sob
 orientação do {\bf Prof. Fábio Meneghetti Ugulino de
@@ -183,19 +180,20 @@ Professor:  Fábio Meneghetti Ugulino de Araújo.
 
 \begin{flushleft}
 
-\hspace{4ex}Trata-se da apresentação fiel, breve e concisa dos aspectos mais relevantes do
-trabalho, apresentando as ideias essenciais, na mesma progressão e no mesmo
-encadeamento que aparecem no texto. O resumo deve apresentar os objetivos, uma
-visão geral, ampla e, ao mesmo tempo, clara e objetiva do conteúdo do trabalho.\\
-\hspace{4ex}A norma da ABNT recomenda que se use de 150 a 500 palavras, em espaço
-simples, e deve-se usar o verbo na voz ativa e na terceira pessoa singular. Logo abaixo,
-devem ser colocadas as palavras-chave.\\
+\hspace{4ex} Nesse relatório serão apresentados os conceitos iniciais que serão usados ao longo do semestre na disciplina de Laboratório de Sistemas de Controle, então aqui serão feitos:
+\begin{itemize}
+	\item a introdução à representação matemática da dinâmica de sistemas
+	\item a modelagem de sistemas dinâmicos, mais especificamente de um sistema de tanques acoplados, e por último
+	\item a simulação dinâmica de sistemas dinâmicos
+\end{itemize}
+
+No primeiro experimento também será escolhido o software para realizar os experimentos, no Grupo 02 da Turma 04 o MatLab foi escolhido pela compatibilidade com alguns arquivos já disponibilizados pelo professor.\\
 
 \end{flushleft}
 
 \vspace{1.5cm}
 
-\textbf{Palavras-chave:}
+%\textbf{Palavras-chave:}
 
 \newpage
 
@@ -272,20 +270,38 @@ MQ\hspace{1.5cm}&Tempo de retardo de um sistema ou tempo morto.\\
 \section{INTRODUÇÃO}
 
 \begin{flushleft}
-\hspace{4ex}A introdução serve para o leitor ter uma noção genérica do tema que será
-abordado. Uma boa introdução deve criar uma expectativa positiva no leitor e despertar
-seu interesse pela leitura do restante do trabalho. Deve apresentar, basicamente, a
-delimitação do assunto o(s) objetivo(s) do estudo e sua finalidade, o ponto-de-vista sob
-qual o assunto será tratado, enfim, os elementos necessários para situar o tema do
-trabalho.
+\hspace{4ex} No primeiro experimento da disciplina serão estudadas algumas simulações com um sistema de tanques acoplados. Esse sistema de tanques é baseado num kit didático da Quanser, composto por:
+
+\begin{itemize}
+	\item 2 tanques
+	\item 1 reservatório
+	\item 1 mini bomba de água
+	\item tubos para conexão
+\end{itemize}
+
+Na figura abaixo o sistema é exibido com os componentes citados.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.40]{./imagens/tanque-agua.jpg}
+	\caption{Tanque Quanser}
+\end{figure}
+
+No sistema mostrado a bomba eleva o líquido do reservatório (que está na parte mais baixa), até duas conexões hidráulicas. Tubos podem ser conectados a essas conexões, de modo que ele pode fluir para um dos dois tanques. A partir do tanque 1 o líquido pode passar para o tanque 2, e do tanque 2 pode passar para o reservatório. Cada um dos tanques está equipado com um sensor de nível, que fornece um sinal elétrico em função da altura da coluna do fluido. Esse sistema de tanques acoplados também contém conexões elétricas de entrada e saída, e é possível usa-las para enviar sinais nos sensores, variando entre 0 e 4.8 Volts, para o sistema de aquisição de dados e -12 a 12 Volts para o acionamento da bomba. Três configurações são possíveis:
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.40]{./imagens/configuracoes-tanque.png}
+	\caption{Configurações do tanque}
+\end{figure}
+
 \end{flushleft}
 
-\newpage
+\pagebreak
 
 %%%%%%%%%% REFERENCIAL TEÓRICO %%%%%%%
 
 \thispagestyle{main}
-
 \section{REFERENCIAL TEÓRICO}
 
 
@@ -321,14 +337,119 @@ técnicos realizados durante todo o trabalho.
 \thispagestyle{main}
 
 \section{RESULTADOS}
+\hspace{4ex}Como foi dito anteriormente, decidimos usar o modelo de simulação disponibilizado no SIGAA. 
+
+\section{Teste de tensão versus altura da coluna de água}
+
+Usando o MatLab, tentamos determinar, aproximadamente, qual o nível em que os tanques estabilizariam para as tensões determinadas, os valores encontrados são:
+
+\begin{table}[h]
+	\centering
+	\begin{tabular}{cc}
+	\textbf{Tensão de Entrada (V)} & \textbf{Valores de resposta (cm)} \\
+	1.0	& ~3 \\
+	1.5	& ~6\\
+	2.0	& ~11\\
+	2.5	& ~25\\
+	3.5 & ~18\\
+	3.5	& ~35\\
+	4.0 & ~45\\
+		\multicolumn{1}{l}{} & \multicolumn{1}{l}{} \\
+		\multicolumn{1}{l}{} & \multicolumn{1}{l}{}
+	\end{tabular}
+	\caption{Tensão por altura da coluna de água}
+	\label{tab:my-table}
+\end{table}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.20]{./imagens/exp1/V10.jpg}
+	\caption{1.0V e 3cm }
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.20]{./imagens/exp1/V15.jpg}
+	\caption{1.5V e 6cm }
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.20]{./imagens/exp1/V20.jpg}
+	\caption{2.0V e 11cm }
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.20]{./imagens/exp1/V25.jpg}
+	\caption{2.5V e 25cm }
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.20]{./imagens/exp1/V30.jpg}
+	\caption{3.0V e 18cm }
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.20]{./imagens/exp1/V35.jpg}
+	\caption{3.5V e 35cm }
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.20]{./imagens/exp1/V40.jpg}
+	\caption{4.0V e 45cm }
+\end{figure}
+
+\section{Teste de coluna de água versus tensão de entrada}
+Usando o MatLab, tentamos determinar, aproximadamente, qual o nível em que os tanques estabilizariam para as tensões determinadas, os valores encontrados são:
+
+\begin{table}[h]
+	\centering
+	\begin{tabular}{cc}
+		\textbf{Tensão de Entrada (V)} & \textbf{Valores de resposta (cm)} \\
+		~1.0 & 3 \\
+		~1.85 & 10\\
+		~2.3 & 15\\
+		~2.65 & 20\\
+		~3.0 & 25\\
+		~3.3 & 30\\
+		~4.5 & 35\\
+		\multicolumn{1}{l}{} & \multicolumn{1}{l}{} \\
+		\multicolumn{1}{l}{} & \multicolumn{1}{l}{}
+	\end{tabular}
+	\caption{Altura da coluna de água em função da tensão}
+	\label{tab:my-table2}
+\end{table}
 
 
-\hspace{4ex}Neste capítulo, são apresentados e descritos os resultados obtidos dos experimentos feitos em laboratório. É importante que todos os gráficos e figuras apresentados neste capítulo estejam bem visíveis e com qualidade boa. Este é o capítulo mais importante do trabalho, pois é nele que o aluno irá descrever todos os resultados e observações obtidos no experimento.
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.20]{./imagens/exp2/L10.jpg}
+	\caption{10cm e 1.85V }
+\end{figure}
 
-\subsection{Seções}
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.20]{./imagens/exp2/L15.jpg}
+	\caption{15cm e 2.3V}
+\end{figure}
 
-\subsubsection{Subseções}
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.20]{./imagens/exp2/L20.jpg}
+	\caption{20cm e 2.65V}
+\end{figure}
 
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.20]{./imagens/exp2/L30.jpg}
+	\caption{30cm e 3.3V}
+\end{figure}
+
+\pagebreak
 \newpage
 
 %%%%%%%%%% CONCLUSÃO %%%%%%%%%%%%%%%
@@ -337,14 +458,12 @@ técnicos realizados durante todo o trabalho.
 
 \section{CONCLUSÃO}
 
-
 \hspace{4ex}A conclusão, além de guardar uma proporção relativa ao tamanho do trabalho,
 deve guardar uma proporcionalidade também quanto ao conteúdo. Não deve conter
 assuntos desnecessários, nem exageros numa linguagem excessivamente técnica e
 rebuscada. A conclusão deve dar respostas às questões do trabalho, correspondente aos
 objetivos propostos. Deve ser breve, podendo, se necessário, apresentar sugestões para
 pesquisas futuras.
-
 \newpage
 
 %%%%%%%% REFERÊNCIAS %%%%%%%%%%%%%%%%%

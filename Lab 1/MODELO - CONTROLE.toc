@@ -7,7 +7,7 @@
 \contentsline {subsection}{\numberline {3.1}Seções}{10}{subsection.3.1}%
 \contentsline {subsubsection}{\numberline {3.1.1}Subseções}{10}{subsubsection.3.1.1}%
 \contentsline {section}{\numberline {4}RESULTADOS}{11}{section.4}%
-\contentsline {subsection}{\numberline {4.1}Seções}{11}{subsection.4.1}%
-\contentsline {subsubsection}{\numberline {4.1.1}Subseções}{11}{subsubsection.4.1.1}%
-\contentsline {section}{\numberline {5}CONCLUSÃO}{12}{section.5}%
-\contentsline {chapter}{Referências bibliográficas}{13}{section.5}%
+\contentsline {section}{\numberline {5}Teste de tensão versus altura da coluna de água}{11}{section.5}%
+\contentsline {section}{\numberline {6}Teste de coluna de água versus tensão de entrada}{13}{section.6}%
+\contentsline {section}{\numberline {7}CONCLUSÃO}{16}{section.7}%
+\contentsline {chapter}{Referências bibliográficas}{17}{section.7}%
