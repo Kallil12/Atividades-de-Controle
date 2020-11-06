@@ -11,6 +11,14 @@
 Dispon{\'\i}vel em: \url{http://www.dca.ufrn.br/~meneghet}. Acesso em: 20 set.
   2020.}
 
+\bibitem[Madeira 2016]{dan_madeira}
+\abntrefinfo{Madeira}{MADEIRA}{2016}
+{MADEIRA, D. \emph{Controlador proporcional em sistemas de segunda ordem}.
+  2016.
+Dispon{\'\i}vel em:
+  \url{https://www.embarcados.com.br/controlador-proporcional-em-sistemas-de-segunda-ordem/}.
+  Acesso em: 01 nov. 2020.}
+
 \bibitem[Ogata 2001]{ogata}
 \abntrefinfo{Ogata}{OGATA}{2001}
 {OGATA, K. \emph{Modern Control Engineering}. [S.l.]: Prentice Hall, 2001.}

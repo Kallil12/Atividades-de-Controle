@@ -378,6 +378,44 @@ O filtro derivativo age no regime transitório. Esse tipo específico de filtro 
 
 Sistemas de controle podem sofrer com resposta transitória lenta e oscilatória se houver, como entrada, um sinal saturado, pois a malha de realimentação é desfeita quando esse valor não é considerado. Isso faz com que a saída demore muito para atingir o \textit{setpoint} e apresente oscilações frequentes, esses dois comportamentos são indesejáveis numa planta industrial. Então, para atacar esse problema existe o filtro \textit{anti windup}, que faz com que o controlador saia da região da saturação e volte para o comportamento esperado.
 
+\section{Sistemas de segunda ordem}
+
+Até aqui foram discutidos os conceitos necessários para a realização da primeira parte do experimento, para a segunda parte serão necessários alguns novos conceitos relacionados aos sistemas de segunda ordem. 
+
+Os sistemas de segunda ordem são aqueles cujo modelo pode ser escrito por uma equação diferencial de segunda ordem, ou seja, os que possuem dois polos \cite{dan_madeira}.
+
+O comportamento dos sistemas de segunda ordem é bastante sensível à mudança nos parâmetros, então é importante fazer uma classificação dos perfis existentes para esses sistemas, tentando entender melhor os fenômenos que ocorrem em cada caso. Durante as simulações foi notado que apesar de haver bastante matemática por trás dos modelos, muita coisa pode ser entendida de forma mais fácil de forma empírica, alterando os parâmetros e analisando a mudança nos gráficos.
+
+Existem três tipos principais de sistemas de segunda ordem, são eles:
+\begin{enumerate}
+	\item Superamortecido: um polo na origem, proveniente da entrada degrau unitário e dois polos reais;
+	
+	\item Subamortecido: um polo na origem proveniente da entrada degrau unitário e dois polos complexos, vindos do sistema;
+	
+	\item Criticamente amortecido: um polo na origem proveniente da entrada degrau unitário e dois polos reais iguais.		
+\end{enumerate}
+
+\subsection{Sistemas de segurança}
+
+No segundo experimento será necessário implementar um sistema de segurança que impeça a água de transbordar, mas a bomba também não pode trabalhar sem água, numa situação real ela poderia queimar. Então será feito um sistema de segurança que não permita nem que haja um transbordamento nem uma quebra do motor. 
+
+Esse tipo de segurança é definido como sendo um conjunto de passos, na lógica de automação e controle, que devem existir para garantir a segurança de um equipamento, pessoa ou processo \cite{meneghetti1}. Nesses casos as travas lógicas, que são implementadas em \textit{software} e as travas físicas, que são \textit{hardware}, são usadas para garantir a segurança das pessoas e a continuidade da produção.
+
+O sistema vai monitorar certas condições da planta, tentando mante-la dentro do limite operacional estabelecido, e quando condições de risco, ou que estiverem fora dos parâmetros criados, forem detectadas ele deve acionar alarmes, ou também pode atuar nos erros.
+
+Na simulação as seguintes regras devem ser seguidas e implementadas no sistema de segurança:
+
+\begin{itemize}
+	\item Não deve ser enviado para o sistema uma tensão fora dos limites de $\pm 4V$;
+	\item A bomba não pode trabalhar sem que haja líquido a ser bombeado;
+	\item Nenhum dos dois tanques pode transbordar.
+\end{itemize}
+
+\section{Controle em cascata}
+
+O controle em cascata é implementado quando a malha de controle simples não responde satisfatoriamente, principalmente em processos que possuem uma perturbação contínua em torno da variável que se deseja manipular, ou seja, o nível do tanque 2 com o constante recebimento de água a partir do tanque 1 pode se encaixar nessa situação. O controle em cascata consiste de um controlador primário que regula um controlador secundário, melhorando a velocidade de resposta e reduzindo os distúrbios causados pela malha secundária
+
+No arranjo proposto pelo roteiro pode-se manipular a tensão enviada para a bomba e obter o nível desejado no tanque 1, que influencia na vazão de saída afetando a vazão de entrada do tanque 2. O objetivo é controlar o nível do segundo tanque a partir do primeiro, então com uma malha externa de controle é preciso captar o erro entre a referência desejada e o nível do tanque 2 e fornecer um valor para o tanque 1, alterando a tensão do motor e aumentando, ou diminuindo, o nível do segundo tanque.
 \chapter{Desenvolvimento e resultados}
 
 O experimento consiste dos seguintes pontos:
@@ -577,13 +615,11 @@ O filtro \textit{anti windup} deveria apresentar um sinal melhor que o controlad
 % ---
 \chapter{Conclusão}
 
-A CONCLUSÃO SÓ PODE SER FEITA DEPOIS DOS 3 EXPERIMENTOS
+As simulações permitiram que fosse melhor entendido o comportamento dos controladores P, PI, PD e PID, e além desses, também implementamos os filtros, para entender o impacto que eles causam nos sinais dos controladores. Nos experimentos 2A e 2B o objetivo era controlar os níveis dos tanques 1 e 2, respectivamente, e no experimento 2C era pedido que apenas o segundo tanque fosse controlado. Para analisar os gráficos observamos o tempo de estabilidade, o tempo de subida, o sobressinal e a oscilação.
 
-Essa conclusão deve reunir os pontos 3 e 4, no ponto 3 o relatório deve descrever a diferença no comportamento do sistema com cada uma das leis de controle (P, PI, PD e PID) e no ponto 4 deve descrever o comportamento do sistema para diferentes valores de ganhos.
+Foi observado que no sistema de primeira ordem, de acordo com nossas simulações, o tempo de estabilidade é menor em relação ao de segunda ordem, e também oscila menos. Além disso, esperávamos encontrar resultados melhores com o controle em cascata, porém o tempo de estabilidade aumentou e também ficou mais instável, isso pode ser um problema de \textit{tunning}, mas mesmo com pesquisa e vários testes empíricos não chegamos a um resultado realmente bom, que justifique o aumento de complexidade na implementação do controle em cascata.
 
-3 - comportamento do sistema baseado no P, PD, PI e PID
-
-4 - comportamento do sistema baseado nos ganhos
+Em todos os experimentos foi possível ver a ação proporcional, integral e derivativa, e as consequências de cada uma delas nos gráficos. Portanto, para diminuição de erro de regime, regula-se o $K_i$, para atuar na oscilação usamos o $K_p$ e para tornar o tempo de acomodação menor é importante usar o $K_d$.
 
 
 \postextual

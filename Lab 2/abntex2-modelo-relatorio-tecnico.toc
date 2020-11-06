@@ -15,20 +15,23 @@
 \contentsline {section}{\numberline {1.5}Filtros}{9}{section.1.5}%
 \contentsline {subsection}{\numberline {1.5.1}Filtro derivativo}{9}{subsection.1.5.1}%
 \contentsline {subsection}{\numberline {1.5.2}Filtro \textit {anti windup}}{9}{subsection.1.5.2}%
+\contentsline {section}{\numberline {1.6}Sistemas de segunda ordem}{9}{section.1.6}%
+\contentsline {subsection}{\numberline {1.6.1}Sistemas de segurança}{10}{subsection.1.6.1}%
+\contentsline {section}{\numberline {1.7}Controle em cascata}{11}{section.1.7}%
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
-\contentsline {chapter}{\chapternumberline {2}\MakeTextUppercase {Desenvolvimento e resultados}}{10}{chapter.2}%
-\contentsline {section}{\numberline {2.1}Implementação da ação proporcional - controlador P}{10}{section.2.1}%
-\contentsline {subsection}{\numberline {2.1.1}Controlador P - ganho 1}{11}{subsection.2.1.1}%
-\contentsline {subsection}{\numberline {2.1.2}Controlador P - ganhos 5 e 10}{12}{subsection.2.1.2}%
-\contentsline {section}{\numberline {2.2}Expansão do controlador}{14}{section.2.2}%
-\contentsline {subsection}{\numberline {2.2.1}Implementação da ação integrativa - controlador PI}{14}{subsection.2.2.1}%
-\contentsline {subsection}{\numberline {2.2.2}Implementação da ação derivativa - controlador PD e PID}{16}{subsection.2.2.2}%
-\contentsline {subsection}{\numberline {2.2.3}Implementação do filtro na ação derivativa}{18}{subsection.2.2.3}%
-\contentsline {subsection}{\numberline {2.2.4}Implementação do filtro \textit {anti-reset-windup}}{18}{subsection.2.2.4}%
+\contentsline {chapter}{\chapternumberline {2}\MakeTextUppercase {Desenvolvimento e resultados}}{12}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Implementação da ação proporcional - controlador P}{12}{section.2.1}%
+\contentsline {subsection}{\numberline {2.1.1}Controlador P - ganho 1}{13}{subsection.2.1.1}%
+\contentsline {subsection}{\numberline {2.1.2}Controlador P - ganhos 5 e 10}{14}{subsection.2.1.2}%
+\contentsline {section}{\numberline {2.2}Expansão do controlador}{16}{section.2.2}%
+\contentsline {subsection}{\numberline {2.2.1}Implementação da ação integrativa - controlador PI}{16}{subsection.2.2.1}%
+\contentsline {subsection}{\numberline {2.2.2}Implementação da ação derivativa - controlador PD e PID}{18}{subsection.2.2.2}%
+\contentsline {subsection}{\numberline {2.2.3}Implementação do filtro na ação derivativa}{20}{subsection.2.2.3}%
+\contentsline {subsection}{\numberline {2.2.4}Implementação do filtro \textit {anti-reset-windup}}{20}{subsection.2.2.4}%
 \vspace {\cftbeforechapterskip }
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
-\contentsline {chapter}{\chapternumberline {3}\MakeTextUppercase {Conclusão}}{19}{chapter.3}%
+\contentsline {chapter}{\chapternumberline {3}\MakeTextUppercase {Conclusão}}{21}{chapter.3}%
 \vspace {\cftbeforechapterskip }
 \setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
-\contentsline {chapter}{\MakeTextUppercase {Refer\^encias}}{20}{section*.10}%
+\contentsline {chapter}{\MakeTextUppercase {Refer\^encias}}{22}{section*.10}%
 \vspace {\cftbeforechapterskip }
