@@ -18,3 +18,10 @@
 \contentsline {figure}{\numberline {2.15}{\ignorespaces Controlador PID - nível dos tanques - $K_p = 2$, $K_i = 0.01$ e $K_d=0.001$}}{19}{figure.2.15}%
 \contentsline {figure}{\numberline {2.16}{\ignorespaces Filtro derivativo}}{20}{figure.2.16}%
 \contentsline {figure}{\numberline {2.17}{\ignorespaces Filtro \textit {anti windup}}}{20}{figure.2.17}%
+\contentsline {figure}{\numberline {2.18}{\ignorespaces Controlador P - Sistema de Segunda Ordem}}{21}{figure.2.18}%
+\contentsline {figure}{\numberline {2.19}{\ignorespaces Sinal de controle - Sistema de Segunda Ordem}}{21}{figure.2.19}%
+\contentsline {figure}{\numberline {2.20}{\ignorespaces Controlador PI - Sistema de Segunda Ordem}}{22}{figure.2.20}%
+\contentsline {figure}{\numberline {2.21}{\ignorespaces Sinal de controle PI - Sistema de Segunda Ordem}}{23}{figure.2.21}%
+\contentsline {figure}{\numberline {2.22}{\ignorespaces Controlador PID - Sistema de Segunda Ordem}}{24}{figure.2.22}%
+\contentsline {figure}{\numberline {2.23}{\ignorespaces Sinal de controle PID - Sistema de Segunda Ordem}}{24}{figure.2.23}%
+\contentsline {figure}{\numberline {2.24}{\ignorespaces Sinal de controle PID com filtro derivativo - Sistema de Segunda Ordem}}{25}{figure.2.24}%

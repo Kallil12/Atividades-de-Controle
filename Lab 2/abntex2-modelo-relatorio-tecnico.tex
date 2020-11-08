@@ -608,8 +608,80 @@ O filtro \textit{anti windup} deveria apresentar um sinal melhor que o controlad
 	\caption{Filtro \textit{anti windup}}
 \end{figure}
 
+\section{Controlador de Segunda Ordem}
+
+ INSERIR TEXTO AQUI
+ 
+\subsection{Implementação do controlador proporcional em segunda ordem}
+ 
+Os testes começaram com a implementação do controlador proporcional, testamos com o $K_p = 1,0$, e obtemos os seguintes resultados:
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.50]{7 - controlador_P_SO.jpg}
+	\caption{Controlador P - Sistema de Segunda Ordem}
+\end{figure}
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.50]{7 - sinal_controle_P_SO.jpg}
+	\caption{Sinal de controle - Sistema de Segunda Ordem}
+\end{figure}
+
+O comportamento, no geral, é o esperado para essa situação porque o aumento do $K_p$ torna o sistema bastante oscilatório e o erro de regime fica menor. O sinal de entrada começa em 35V e fica saturando por aproximadamente 25s, depois se torna bastante oscilatório. Após isso usamos um $K_p=5,8$. O sistema teve um \textit{overshoot} alto, porém houve menos oscilação e o erro de regime aumentou. 
+
+Como foi mostrado, não é recomendado controlar um sistema por meio de um controlador proporcional simples, porque com o aumento do $K_p$ o erro de regime é reduzido ao custo de um sistema com mais oscilação. Comparando isso com uma possível aplicação do mundo real teríamos um sistema que não consegue manter uma boa reprodutibilidade de peças, por exemplo, elas estariam sempre próximo ao desejado, mas apresentariam diferenças entre si. 
+
+\subsection{Implementação do controlador proporcional integral em segunda ordem}
+
+O controlador PI, como já foi dito, é a soma da ação proporcional com a integral, então com essa união a resposta transitória e o erro de regime melhoram, isso é causado pela ação proporcional e integral, respectivamente. Os testes usaram valores de $K_p=3,0$ e $K_i=0,015$.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.25]{9 - pi_1_segunda_ordem.jpg}
+	\caption{Controlador PI - Sistema de Segunda Ordem}
+\end{figure}
+
+Os valores resultaram num \textit{overshoot} alto, no tanque 1, mas no tanque 2 foi baixo. Notamos que o sinal oscila bastante, mas esse comportamento tem se repetido ao longo dos experimentos. Apesar desses problemas, o sistema alcança a estabilidade antes dos 25 segundos.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.25]{9 - pi_11_segunda_ordem.jpg}
+	\caption{Sinal de controle PI - Sistema de Segunda Ordem}
+\end{figure}
+\clearpage
+\subsection{Implementação do controlador PID em segunda ordem}
+
+O controlador PID reúne todas as ações vistas (proporcional, integral e derivativa), elas atuam no regime transitório e permanente. Utilizando os valores $K_p=7,5$, $K_i=0,015$ e $K_d=0,001$, diminuímos o \textit{overshoot}, mas não reduzimos a oscilação. O gráfico da saturação apresenta dois picos que chamam a atenção e não conseguimos consertar.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.25]{10 - pid_1_segunda_ordem.jpg}
+	\caption{Controlador PID - Sistema de Segunda Ordem}
+\end{figure}
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.25]{10 - pid_11_segunda_ordem.jpg}
+	\caption{Sinal de controle PID - Sistema de Segunda Ordem}
+\end{figure}
+
+Com esses valores o erro de regime não foi zerado, mas converge para o \textit{setpoint}.
+
+\subsection{Implementação do controlador PID em segunda ordem com filtro derivativo}
+
+A combinação de controlador PID com o filtro derivativo foi a que rendeu os melhores resultados, diferentemente desse conjunto aplicado ao sistema de primeira ordem, o sistema de segunda ordem se comportou muito melhor, diminuindo o erro de regime e o sobressinal.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.25]{12 - pid_segunda_ordem_filtro.jpg}
+	\caption{Sinal de controle PID com filtro derivativo - Sistema de Segunda Ordem}
+\end{figure}
+
+No filtro \textit{anti-reset windup} usamos 0.01, já para as ações usamos $K_p=2,5$, $K_i=0,025$ e $K_d = 0.01$, curiosamente o valor usado no filtro e usado no $K_d$ é o mesmo, e dessa forma conseguimos o gráfico mostrado, mas não entendemos essa relação em específico. Foi notado, de forma empírica, que quando eles eram diferentes haviam mudanças mais significativas no gráfico. 
 \phantompart
 
+\section{Controle em cascata}
 % ---
 % Conclusão
 % ---

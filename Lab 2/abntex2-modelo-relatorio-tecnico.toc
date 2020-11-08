@@ -28,10 +28,16 @@
 \contentsline {subsection}{\numberline {2.2.2}Implementação da ação derivativa - controlador PD e PID}{18}{subsection.2.2.2}%
 \contentsline {subsection}{\numberline {2.2.3}Implementação do filtro na ação derivativa}{20}{subsection.2.2.3}%
 \contentsline {subsection}{\numberline {2.2.4}Implementação do filtro \textit {anti-reset-windup}}{20}{subsection.2.2.4}%
+\contentsline {section}{\numberline {2.3}Controlador de Segunda Ordem}{21}{section.2.3}%
+\contentsline {subsection}{\numberline {2.3.1}Implementação do controlador proporcional em segunda ordem}{21}{subsection.2.3.1}%
+\contentsline {subsection}{\numberline {2.3.2}Implementação do controlador proporcional integral em segunda ordem}{22}{subsection.2.3.2}%
+\contentsline {subsection}{\numberline {2.3.3}Implementação do controlador PID em segunda ordem}{24}{subsection.2.3.3}%
+\contentsline {subsection}{\numberline {2.3.4}Implementação do controlador PID em segunda ordem com filtro derivativo}{25}{subsection.2.3.4}%
 \vspace {\cftbeforechapterskip }
+\contentsline {section}{\numberline {2.4}Controle em cascata}{25}{section.2.4}%
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
-\contentsline {chapter}{\chapternumberline {3}\MakeTextUppercase {Conclusão}}{21}{chapter.3}%
+\contentsline {chapter}{\chapternumberline {3}\MakeTextUppercase {Conclusão}}{26}{chapter.3}%
 \vspace {\cftbeforechapterskip }
 \setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
-\contentsline {chapter}{\MakeTextUppercase {Refer\^encias}}{22}{section*.10}%
+\contentsline {chapter}{\MakeTextUppercase {Refer\^encias}}{27}{section*.10}%
 \vspace {\cftbeforechapterskip }
