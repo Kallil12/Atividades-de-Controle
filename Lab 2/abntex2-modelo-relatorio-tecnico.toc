@@ -35,9 +35,11 @@
 \contentsline {subsection}{\numberline {2.3.4}Implementação do controlador PID em segunda ordem com filtro derivativo}{25}{subsection.2.3.4}%
 \vspace {\cftbeforechapterskip }
 \contentsline {section}{\numberline {2.4}Controle em cascata}{25}{section.2.4}%
+\contentsline {subsection}{\numberline {2.4.1}Controlador PID com filtro derivativo }{25}{subsection.2.4.1}%
+\contentsline {subsection}{\numberline {2.4.2}Controlador PID com filtro derivativo e \textit {anti-reset windup}}{26}{subsection.2.4.2}%
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
-\contentsline {chapter}{\chapternumberline {3}\MakeTextUppercase {Conclusão}}{26}{chapter.3}%
+\contentsline {chapter}{\chapternumberline {3}\MakeTextUppercase {Conclusão}}{28}{chapter.3}%
 \vspace {\cftbeforechapterskip }
 \setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
-\contentsline {chapter}{\MakeTextUppercase {Refer\^encias}}{27}{section*.10}%
+\contentsline {chapter}{\MakeTextUppercase {Refer\^encias}}{29}{section*.10}%
 \vspace {\cftbeforechapterskip }

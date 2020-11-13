@@ -530,21 +530,21 @@ O termo integral é proporcional à magnitude do erro e à duração do erro. De
 \begin{figure}[h]
 	\centering
 	\includegraphics[scale=0.30]{1 - nivel_PI_1kp_001ki.jpg}
-	\caption{Controlador PI - nível dos tanques - $K_p = 1$ e $K_i = 0.01$}
+	\caption{Controlador PI - nível dos tanques - $K_p = 1$ e $K_i = 0,01$}
 	\label{fig:controladorPI_1}
 \end{figure}
 
 \begin{figure}[h]
 	\centering
 	\includegraphics[scale=0.30]{1 - PI sinal_controle.jpg}
-	\caption{Controlador PI - sinal de controle - $K_p = 1$ e $K_i = 0.01$}
+	\caption{Controlador PI - sinal de controle - $K_p = 1$ e $K_i = 0,01$}
 	\label{fig:sinal_controladorPI_1}
 \end{figure}
 
 \begin{figure}[h]
 	\centering
 	\includegraphics[scale=0.30]{1 - PI acoes_controle.jpg}
-	\caption{Controlador PI - ações de controle - $K_p = 1$ e $K_i = 0.01$}
+	\caption{Controlador PI - ações de controle - $K_p = 1$ e $K_i = 0,01$}
 	\label{fig:acao_controladorPI_1}
 \end{figure}
 
@@ -560,28 +560,28 @@ A ação derivativa tenta prever o comportamento do sistema diminuindo o tempo e
 \begin{figure}[h]
 	\centering
 	\includegraphics[scale=0.30]{4 - nivel_ PDI_1kp_001ki_0001kd.jpg}
-	\caption{Controlador PID - nível dos tanques - $K_p = 1$, $K_i = 0.01$ e $K_d=0.001$}
+	\caption{Controlador PID - nível dos tanques - $K_p = 1$, $K_i = 0,01$ e $K_d=0,001$}
 	\label{fig:controladorPID_1}
 \end{figure}
 
 \begin{figure}[h]
 	\centering
 	\includegraphics[scale=0.30]{4 - PDI sinal_controle.jpg}
-	\caption{Controlador PI - sinal de controle - $K_p = 1$, $K_i = 0.01$ e $K_d=0.001$}
+	\caption{Controlador PI - sinal de controle - $K_p = 1$, $K_i = 0,01$ e $K_d=0,001$}
 	\label{fig:sinal_controladorPID_1}
 \end{figure}
 
 \begin{figure}[h]
 	\centering
 	\includegraphics[scale=0.30]{4 - PDI acoes_controle.jpg}
-	\caption{Controlador PI - ações de controle - $K_p = 1$, $K_i = 0.01$ e $K_d=0.001$}
+	\caption{Controlador PI - ações de controle - $K_p = 1$, $K_i = 0,01$ e $K_d=0,001$}
 	\label{fig:acao_controladorPID_1}
 \end{figure}
 
 \begin{figure}[h]
 	\centering
 	\includegraphics[scale=0.30]{6 - nivel_ PDI_2kp_01ki_0001kd.jpg}
-	\caption{Controlador PID - nível dos tanques - $K_p = 2$, $K_i = 0.01$ e $K_d=0.001$}
+	\caption{Controlador PID - nível dos tanques - $K_p = 2$, $K_i = 0,01$ e $K_d=0,001$}
 	\label{fig:controladorPID_2}
 \end{figure}
 
@@ -678,18 +678,46 @@ A combinação de controlador PID com o filtro derivativo foi a que rendeu os me
 	\caption{Sinal de controle PID com filtro derivativo - Sistema de Segunda Ordem}
 \end{figure}
 
-No filtro \textit{anti-reset windup} usamos 0.01, já para as ações usamos $K_p=2,5$, $K_i=0,025$ e $K_d = 0.01$, curiosamente o valor usado no filtro e usado no $K_d$ é o mesmo, e dessa forma conseguimos o gráfico mostrado, mas não entendemos essa relação em específico. Foi notado, de forma empírica, que quando eles eram diferentes haviam mudanças mais significativas no gráfico. 
+No filtro \textit{anti-reset windup} usamos 0.01, já para as ações usamos $K_p=2,5$, $K_i=0,025$ e $K_d = 0,01$, curiosamente o valor usado no filtro e usado no $K_d$ é o mesmo, e dessa forma conseguimos o gráfico mostrado, mas não entendemos essa relação em específico. Foi notado, de forma empírica, que quando eles eram diferentes haviam mudanças mais significativas no gráfico. 
 \phantompart
 
 \section{Controle em cascata}
-% ---
-% Conclusão
-% ---
+
+Na última parte do segundo experimento usamos dois controladores, sempre com o objetivo de melhorar o desempenho do sistema.
+
+\subsection{Controlador PID com filtro derivativo }
+
+O primeiro teste com o controlador em cascata foi usando um filtro derivativo nos dois controladores, nesse experimento foi utilizado um $K_{pe} = 2,5$. Nessa configuração obtemos um controlador que não era muito preciso em relação ao segundo tanque por causa do sobressinal, no primeiro reservatório o controle foi satisfatório, porque não havia \textit{overshoot} e o tempo de acomodação foi semelhante ao do segundo tanque.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.50]{13_cascata_1.png}
+	\caption{Controlador PID em cascata - filtro derivativo}
+\end{figure}
+
+\subsection{Controlador PID com filtro derivativo e \textit{anti-reset windup}}
+
+Nessa configuração começamos com $K_p = 2$, $K_i = 0,06$ e $K_d = 0.003$ para o mestre, e  $K_p = 1$, $K_i = 0,03$ e $K_d = 0.001$ para o escravo. Esses valores resultaram em uma anulação do \textit{overshoot} e uma convergência do sistema ao nível desejado, apesar disso, o sinal da malha mestre apresenta bastante ruído. Realizamos mais alguns testes, para tentar melhorar o comportamento apresentado pelo gráfico \ref{fig:controlador_cascata_2}, e assim obtivemos o gráfico \ref{fig:controlador_cascata_3}.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.40]{14_controle_cascata_2.jpg}
+	\caption{Controlador PID em cascata - filtro \textit{anti-reset windup}}
+	\label{fig:controlador_cascata_2}
+\end{figure}
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.25]{15_controle_cascata_3.jpg}
+	\caption{Controlador PID em cascata 2 - filtro \textit{anti-reset windup}}
+	\label{fig:controlador_cascata_3}
+\end{figure}
+
 \chapter{Conclusão}
 
 As simulações permitiram que fosse melhor entendido o comportamento dos controladores P, PI, PD e PID, e além desses, também implementamos os filtros, para entender o impacto que eles causam nos sinais dos controladores. Nos experimentos 2A e 2B o objetivo era controlar os níveis dos tanques 1 e 2, respectivamente, e no experimento 2C era pedido que apenas o segundo tanque fosse controlado. Para analisar os gráficos observamos o tempo de estabilidade, o tempo de subida, o sobressinal e a oscilação.
 
-Foi observado que no sistema de primeira ordem, de acordo com nossas simulações, o tempo de estabilidade é menor em relação ao de segunda ordem, e também oscila menos. Além disso, esperávamos encontrar resultados melhores com o controle em cascata, porém o tempo de estabilidade aumentou e também ficou mais instável, isso pode ser um problema de \textit{tunning}, mas mesmo com pesquisa e vários testes empíricos não chegamos a um resultado realmente bom, que justifique o aumento de complexidade na implementação do controle em cascata.
+Foi observado que no sistema de primeira ordem, de acordo com nossas simulações, o tempo de estabilidade é menor em relação ao de segunda ordem, e também oscila menos. Além disso, esperávamos encontrar resultados melhores com o controle em cascata, porém o tempo de estabilidade aumentou e também ficou mais instável, isso pode ser um problema de \textit{tunning}, mas mesmo com pesquisa e vários testes empíricos não chegamos a um resultado realmente bom, que justifique o aumento de complexidade na implementação do controle em cascata numa planta industrial real, por exemplo.
 
 Em todos os experimentos foi possível ver a ação proporcional, integral e derivativa, e as consequências de cada uma delas nos gráficos. Portanto, para diminuição de erro de regime, regula-se o $K_i$, para atuar na oscilação usamos o $K_p$ e para tornar o tempo de acomodação menor é importante usar o $K_d$.
 

@@ -9,13 +9,13 @@
 \contentsline {figure}{\numberline {2.6}{\ignorespaces Controlador P Ganho 5 - Sinal de entrada}}{15}{figure.2.6}%
 \contentsline {figure}{\numberline {2.7}{\ignorespaces Controlador P Ganho 10 - Sinal de entrada}}{15}{figure.2.7}%
 \contentsline {figure}{\numberline {2.8}{\ignorespaces Controlador PID no Simulink}}{16}{figure.2.8}%
-\contentsline {figure}{\numberline {2.9}{\ignorespaces Controlador PI - nível dos tanques - $K_p = 1$ e $K_i = 0.01$}}{17}{figure.2.9}%
-\contentsline {figure}{\numberline {2.10}{\ignorespaces Controlador PI - sinal de controle - $K_p = 1$ e $K_i = 0.01$}}{17}{figure.2.10}%
-\contentsline {figure}{\numberline {2.11}{\ignorespaces Controlador PI - ações de controle - $K_p = 1$ e $K_i = 0.01$}}{17}{figure.2.11}%
-\contentsline {figure}{\numberline {2.12}{\ignorespaces Controlador PID - nível dos tanques - $K_p = 1$, $K_i = 0.01$ e $K_d=0.001$}}{18}{figure.2.12}%
-\contentsline {figure}{\numberline {2.13}{\ignorespaces Controlador PI - sinal de controle - $K_p = 1$, $K_i = 0.01$ e $K_d=0.001$}}{18}{figure.2.13}%
-\contentsline {figure}{\numberline {2.14}{\ignorespaces Controlador PI - ações de controle - $K_p = 1$, $K_i = 0.01$ e $K_d=0.001$}}{19}{figure.2.14}%
-\contentsline {figure}{\numberline {2.15}{\ignorespaces Controlador PID - nível dos tanques - $K_p = 2$, $K_i = 0.01$ e $K_d=0.001$}}{19}{figure.2.15}%
+\contentsline {figure}{\numberline {2.9}{\ignorespaces Controlador PI - nível dos tanques - $K_p = 1$ e $K_i = 0,01$}}{17}{figure.2.9}%
+\contentsline {figure}{\numberline {2.10}{\ignorespaces Controlador PI - sinal de controle - $K_p = 1$ e $K_i = 0,01$}}{17}{figure.2.10}%
+\contentsline {figure}{\numberline {2.11}{\ignorespaces Controlador PI - ações de controle - $K_p = 1$ e $K_i = 0,01$}}{17}{figure.2.11}%
+\contentsline {figure}{\numberline {2.12}{\ignorespaces Controlador PID - nível dos tanques - $K_p = 1$, $K_i = 0,01$ e $K_d=0,001$}}{18}{figure.2.12}%
+\contentsline {figure}{\numberline {2.13}{\ignorespaces Controlador PI - sinal de controle - $K_p = 1$, $K_i = 0,01$ e $K_d=0,001$}}{18}{figure.2.13}%
+\contentsline {figure}{\numberline {2.14}{\ignorespaces Controlador PI - ações de controle - $K_p = 1$, $K_i = 0,01$ e $K_d=0,001$}}{19}{figure.2.14}%
+\contentsline {figure}{\numberline {2.15}{\ignorespaces Controlador PID - nível dos tanques - $K_p = 2$, $K_i = 0,01$ e $K_d=0,001$}}{19}{figure.2.15}%
 \contentsline {figure}{\numberline {2.16}{\ignorespaces Filtro derivativo}}{20}{figure.2.16}%
 \contentsline {figure}{\numberline {2.17}{\ignorespaces Filtro \textit {anti windup}}}{20}{figure.2.17}%
 \contentsline {figure}{\numberline {2.18}{\ignorespaces Controlador P - Sistema de Segunda Ordem}}{21}{figure.2.18}%
@@ -25,3 +25,6 @@
 \contentsline {figure}{\numberline {2.22}{\ignorespaces Controlador PID - Sistema de Segunda Ordem}}{24}{figure.2.22}%
 \contentsline {figure}{\numberline {2.23}{\ignorespaces Sinal de controle PID - Sistema de Segunda Ordem}}{24}{figure.2.23}%
 \contentsline {figure}{\numberline {2.24}{\ignorespaces Sinal de controle PID com filtro derivativo - Sistema de Segunda Ordem}}{25}{figure.2.24}%
+\contentsline {figure}{\numberline {2.25}{\ignorespaces Controlador PID em cascata - filtro derivativo}}{26}{figure.2.25}%
+\contentsline {figure}{\numberline {2.26}{\ignorespaces Controlador PID em cascata - filtro \textit {anti-reset windup}}}{26}{figure.2.26}%
+\contentsline {figure}{\numberline {2.27}{\ignorespaces Controlador PID em cascata 2 - filtro \textit {anti-reset windup}}}{27}{figure.2.27}%
