@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.8.24)  13 NOV 2020 14:52
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.8.24)  14 NOV 2020 22:26
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -996,7 +996,7 @@ LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <12> not available
 
 ]
 LaTeX Font Info:    Trying to load font information for TS1+lmss on input line 
-313.
+316.
 
 (/usr/share/texmf/tex/latex/lm/ts1lmss.fd
 File: ts1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
@@ -1011,17 +1011,17 @@ Package microtype Info: Loading generic protrusion settings for font family
 <planta.jpg, id=196, 472.76625pt x 149.55875pt>
 File: planta.jpg Graphic file (type jpg)
 <use planta.jpg>
-Package pdftex.def Info: planta.jpg  used on input line 357.
+Package pdftex.def Info: planta.jpg  used on input line 360.
 (pdftex.def)             Requested size: 330.93411pt x 104.6904pt.
  [8 <./planta.jpg>]
 LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <14.4> not available
-(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 377.
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 380.
  [9] [10]
 [11]
 <controlador_p.PNG, id=229, 608.87476pt x 249.3315pt>
 File: controlador_p.PNG Graphic file (type png)
 <use controlador_p.PNG>
-Package pdftex.def Info: controlador_p.PNG  used on input line 441.
+Package pdftex.def Info: controlador_p.PNG  used on input line 444.
 (pdftex.def)             Requested size: 426.20941pt x 174.53084pt.
  [12
 
@@ -1029,28 +1029,28 @@ Package pdftex.def Info: controlador_p.PNG  used on input line 441.
 <controlador_p_ganho_1.jpg, id=245, 1355.0625pt x 629.35126pt>
 File: controlador_p_ganho_1.jpg Graphic file (type jpg)
 <use controlador_p_ganho_1.jpg>
-Package pdftex.def Info: controlador_p_ganho_1.jpg  used on input line 454.
+Package pdftex.def Info: controlador_p_ganho_1.jpg  used on input line 457.
 (pdftex.def)             Requested size: 406.5219pt x 188.80682pt.
 <osciloscopio_ganho_1.jpg, id=246, 1355.0625pt x 629.35126pt>
 File: osciloscopio_ganho_1.jpg Graphic file (type jpg)
 <use osciloscopio_ganho_1.jpg>
-Package pdftex.def Info: osciloscopio_ganho_1.jpg  used on input line 462.
+Package pdftex.def Info: osciloscopio_ganho_1.jpg  used on input line 465.
 (pdftex.def)             Requested size: 406.5219pt x 188.80682pt.
  [13 <./controlador_p_ganho_1.jpg> <./osciloscopio_ganho_1.jpg>]
 <controlador_p_ganho_5.jpg, id=251, 1355.0625pt x 629.35126pt>
 File: controlador_p_ganho_5.jpg Graphic file (type jpg)
 <use controlador_p_ganho_5.jpg>
-Package pdftex.def Info: controlador_p_ganho_5.jpg  used on input line 472.
+Package pdftex.def Info: controlador_p_ganho_5.jpg  used on input line 475.
 (pdftex.def)             Requested size: 406.5219pt x 188.80682pt.
 <controlador_p_ganho_10.jpg, id=252, 1355.0625pt x 629.35126pt>
 File: controlador_p_ganho_10.jpg Graphic file (type jpg)
 <use controlador_p_ganho_10.jpg>
-Package pdftex.def Info: controlador_p_ganho_10.jpg  used on input line 478.
+Package pdftex.def Info: controlador_p_ganho_10.jpg  used on input line 481.
 (pdftex.def)             Requested size: 406.5219pt x 188.80682pt.
 <osciloscopio_ganho_5.jpg, id=253, 1355.0625pt x 629.35126pt>
 File: osciloscopio_ganho_5.jpg Graphic file (type jpg)
 <use osciloscopio_ganho_5.jpg>
-Package pdftex.def Info: osciloscopio_ganho_5.jpg  used on input line 486.
+Package pdftex.def Info: osciloscopio_ganho_5.jpg  used on input line 489.
 (pdftex.def)             Requested size: 447.17201pt x 207.68655pt.
 
 
@@ -1059,7 +1059,7 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 <osciloscopio_ganho_10.jpg, id=254, 1355.0625pt x 629.35126pt>
 File: osciloscopio_ganho_10.jpg Graphic file (type jpg)
 <use osciloscopio_ganho_10.jpg>
-Package pdftex.def Info: osciloscopio_ganho_10.jpg  used on input line 493.
+Package pdftex.def Info: osciloscopio_ganho_10.jpg  used on input line 496.
 (pdftex.def)             Requested size: 447.17201pt x 207.68655pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
@@ -1069,12 +1069,12 @@ scopio_ganho_5.jpg> <./osciloscopio_ganho_10.jpg>]
 <Controlador_pid.PNG, id=265, 754.31813pt x 405.01312pt>
 File: Controlador_pid.PNG Graphic file (type png)
 <use Controlador_pid.PNG>
-Package pdftex.def Info: Controlador_pid.PNG  used on input line 509.
+Package pdftex.def Info: Controlador_pid.PNG  used on input line 512.
 (pdftex.def)             Requested size: 414.87627pt x 222.75789pt.
 <1 - nivel_PI_1kp_001ki.jpg, id=267, 1355.0625pt x 629.35126pt>
 File: 1 - nivel_PI_1kp_001ki.jpg Graphic file (type jpg)
 <use 1 - nivel_PI_1kp_001ki.jpg>
-Package pdftex.def Info: 1 - nivel_PI_1kp_001ki.jpg  used on input line 532.
+Package pdftex.def Info: 1 - nivel_PI_1kp_001ki.jpg  used on input line 535.
 (pdftex.def)             Requested size: 406.5219pt x 188.80682pt.
 
 
@@ -1083,7 +1083,7 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 <1 - PI sinal_controle.jpg, id=268, 1355.0625pt x 629.35126pt>
 File: 1 - PI sinal_controle.jpg Graphic file (type jpg)
 <use 1 - PI sinal_controle.jpg>
-Package pdftex.def Info: 1 - PI sinal_controle.jpg  used on input line 539.
+Package pdftex.def Info: 1 - PI sinal_controle.jpg  used on input line 542.
 (pdftex.def)             Requested size: 406.5219pt x 188.80682pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
@@ -1091,7 +1091,7 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 <1 - PI acoes_controle.jpg, id=269, 1355.0625pt x 629.35126pt>
 File: 1 - PI acoes_controle.jpg Graphic file (type jpg)
 <use 1 - PI acoes_controle.jpg>
-Package pdftex.def Info: 1 - PI acoes_controle.jpg  used on input line 546.
+Package pdftex.def Info: 1 - PI acoes_controle.jpg  used on input line 549.
 (pdftex.def)             Requested size: 406.5219pt x 188.80682pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
@@ -1104,17 +1104,17 @@ ntrole.jpg> <./1 - PI acoes_controle.jpg>]
 File: 4 - nivel_ PDI_1kp_001ki_0001kd.jpg Graphic file (type jpg)
 <use 4 - nivel_ PDI_1kp_001ki_0001kd.jpg>
 Package pdftex.def Info: 4 - nivel_ PDI_1kp_001ki_0001kd.jpg  used on input lin
-e 562.
+e 565.
 (pdftex.def)             Requested size: 406.5219pt x 188.80682pt.
 <4 - PDI sinal_controle.jpg, id=283, 1355.0625pt x 629.35126pt>
 File: 4 - PDI sinal_controle.jpg Graphic file (type jpg)
 <use 4 - PDI sinal_controle.jpg>
-Package pdftex.def Info: 4 - PDI sinal_controle.jpg  used on input line 569.
+Package pdftex.def Info: 4 - PDI sinal_controle.jpg  used on input line 572.
 (pdftex.def)             Requested size: 406.5219pt x 188.80682pt.
 <4 - PDI acoes_controle.jpg, id=284, 1355.0625pt x 629.35126pt>
 File: 4 - PDI acoes_controle.jpg Graphic file (type jpg)
 <use 4 - PDI acoes_controle.jpg>
-Package pdftex.def Info: 4 - PDI acoes_controle.jpg  used on input line 576.
+Package pdftex.def Info: 4 - PDI acoes_controle.jpg  used on input line 579.
 (pdftex.def)             Requested size: 406.5219pt x 188.80682pt.
 
 
@@ -1124,7 +1124,7 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 File: 6 - nivel_ PDI_2kp_01ki_0001kd.jpg Graphic file (type jpg)
 <use 6 - nivel_ PDI_2kp_01ki_0001kd.jpg>
 Package pdftex.def Info: 6 - nivel_ PDI_2kp_01ki_0001kd.jpg  used on input line
- 583.
+ 586.
 (pdftex.def)             Requested size: 406.5219pt x 188.80682pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
@@ -1136,45 +1136,45 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 <Filtro_derivativo_1.jpg, id=297, 1909.1325pt x 909.3975pt>
 File: Filtro_derivativo_1.jpg Graphic file (type jpg)
 <use Filtro_derivativo_1.jpg>
-Package pdftex.def Info: Filtro_derivativo_1.jpg  used on input line 597.
+Package pdftex.def Info: Filtro_derivativo_1.jpg  used on input line 600.
 (pdftex.def)             Requested size: 381.81973pt x 181.87628pt.
 <Filtro_windup_1.png, id=298, 1285.80376pt x 590.205pt>
 File: Filtro_windup_1.png Graphic file (type png)
 <use Filtro_windup_1.png>
-Package pdftex.def Info: Filtro_windup_1.png  used on input line 607.
+Package pdftex.def Info: Filtro_windup_1.png  used on input line 610.
 (pdftex.def)             Requested size: 321.45015pt x 147.55089pt.
+<7 - controlador_P_SO.jpg, id=299, 770.88pt x 366.77025pt>
+File: 7 - controlador_P_SO.jpg Graphic file (type jpg)
+<use 7 - controlador_P_SO.jpg>
+Package pdftex.def Info: 7 - controlador_P_SO.jpg  used on input line 622.
+(pdftex.def)             Requested size: 385.43906pt x 183.38467pt.
 
 [20
 
  <./Filtro_derivativo_1.jpg> <./Filtro_windup_1.png (PNG copy)>]
-<7 - controlador_P_SO.jpg, id=303, 770.88pt x 366.77025pt>
-File: 7 - controlador_P_SO.jpg Graphic file (type jpg)
-<use 7 - controlador_P_SO.jpg>
-Package pdftex.def Info: 7 - controlador_P_SO.jpg  used on input line 621.
-(pdftex.def)             Requested size: 385.43906pt x 183.38467pt.
 <7 - sinal_controle_P_SO.jpg, id=304, 770.88pt x 366.77025pt>
 File: 7 - sinal_controle_P_SO.jpg Graphic file (type jpg)
 <use 7 - sinal_controle_P_SO.jpg>
-Package pdftex.def Info: 7 - sinal_controle_P_SO.jpg  used on input line 627.
+Package pdftex.def Info: 7 - sinal_controle_P_SO.jpg  used on input line 628.
 (pdftex.def)             Requested size: 385.43906pt x 183.38467pt.
  [21 <./7 - controlador_P_SO.jpg> <./7 - sinal_controle_P_SO.jpg>]
 <9 - pi_1_segunda_ordem.jpg, id=309, 1909.1325pt x 909.3975pt>
 File: 9 - pi_1_segunda_ordem.jpg Graphic file (type jpg)
 <use 9 - pi_1_segunda_ordem.jpg>
-Package pdftex.def Info: 9 - pi_1_segunda_ordem.jpg  used on input line 641.
+Package pdftex.def Info: 9 - pi_1_segunda_ordem.jpg  used on input line 642.
 (pdftex.def)             Requested size: 477.28197pt x 227.34882pt.
 
-Overfull \hbox (22.28197pt too wide) in paragraph at lines 641--642
+Overfull \hbox (22.28197pt too wide) in paragraph at lines 642--643
  [][] 
  []
 
 <9 - pi_11_segunda_ordem.jpg, id=310, 1909.1325pt x 909.3975pt>
 File: 9 - pi_11_segunda_ordem.jpg Graphic file (type jpg)
 <use 9 - pi_11_segunda_ordem.jpg>
-Package pdftex.def Info: 9 - pi_11_segunda_ordem.jpg  used on input line 649.
+Package pdftex.def Info: 9 - pi_11_segunda_ordem.jpg  used on input line 650.
 (pdftex.def)             Requested size: 477.28197pt x 227.34882pt.
 
-Overfull \hbox (22.28197pt too wide) in paragraph at lines 649--650
+Overfull \hbox (22.28197pt too wide) in paragraph at lines 650--651
  [][] 
  []
 
@@ -1185,10 +1185,10 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 <10 - pid_1_segunda_ordem.jpg, id=319, 1909.1325pt x 909.3975pt>
 File: 10 - pid_1_segunda_ordem.jpg Graphic file (type jpg)
 <use 10 - pid_1_segunda_ordem.jpg>
-Package pdftex.def Info: 10 - pid_1_segunda_ordem.jpg  used on input line 659.
+Package pdftex.def Info: 10 - pid_1_segunda_ordem.jpg  used on input line 660.
 (pdftex.def)             Requested size: 477.28197pt x 227.34882pt.
 
-Overfull \hbox (22.28197pt too wide) in paragraph at lines 659--660
+Overfull \hbox (22.28197pt too wide) in paragraph at lines 660--661
  [][] 
  []
 
@@ -1196,10 +1196,10 @@ Overfull \hbox (22.28197pt too wide) in paragraph at lines 659--660
 File: 10 - pid_11_segunda_ordem.jpg.jpg Graphic file (type jpg)
 <use 10 - pid_11_segunda_ordem.jpg.jpg>
 Package pdftex.def Info: 10 - pid_11_segunda_ordem.jpg.jpg  used on input line 
-665.
+666.
 (pdftex.def)             Requested size: 477.28197pt x 227.34882pt.
 
-Overfull \hbox (22.28197pt too wide) in paragraph at lines 665--666
+Overfull \hbox (22.28197pt too wide) in paragraph at lines 666--667
  [][] 
  []
 
@@ -1210,17 +1210,17 @@ Overfull \hbox (22.28197pt too wide) in paragraph at lines 665--666
 File: 12 - pid_segunda_ordem_filtro.jpg Graphic file (type jpg)
 <use 12 - pid_segunda_ordem_filtro.jpg>
 Package pdftex.def Info: 12 - pid_segunda_ordem_filtro.jpg  used on input line 
-677.
+678.
 (pdftex.def)             Requested size: 477.28197pt x 227.34882pt.
 
-Overfull \hbox (22.28197pt too wide) in paragraph at lines 677--678
+Overfull \hbox (22.28197pt too wide) in paragraph at lines 678--679
  [][] 
  []
 
 <13_cascata_1.png, id=327, 637.38126pt x 512.91624pt>
 File: 13_cascata_1.png Graphic file (type png)
 <use 13_cascata_1.png>
-Package pdftex.def Info: 13_cascata_1.png  used on input line 694.
+Package pdftex.def Info: 13_cascata_1.png  used on input line 695.
 (pdftex.def)             Requested size: 318.68985pt x 256.45749pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
@@ -1229,15 +1229,15 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 <14_controle_cascata_2.jpg, id=335, 702.625pt x 496.85625pt>
 File: 14_controle_cascata_2.jpg Graphic file (type jpg)
 <use 14_controle_cascata_2.jpg>
-Package pdftex.def Info: 14_controle_cascata_2.jpg  used on input line 704.
+Package pdftex.def Info: 14_controle_cascata_2.jpg  used on input line 705.
 (pdftex.def)             Requested size: 281.04501pt x 198.73897pt.
 <15_controle_cascata_3.jpg, id=336, 1909.1325pt x 909.3975pt>
 File: 15_controle_cascata_3.jpg Graphic file (type jpg)
 <use 15_controle_cascata_3.jpg>
-Package pdftex.def Info: 15_controle_cascata_3.jpg  used on input line 711.
+Package pdftex.def Info: 15_controle_cascata_3.jpg  used on input line 712.
 (pdftex.def)             Requested size: 477.28197pt x 227.34882pt.
 
-Overfull \hbox (22.28197pt too wide) in paragraph at lines 711--712
+Overfull \hbox (22.28197pt too wide) in paragraph at lines 712--713
  [][] 
  []
 
@@ -1268,26 +1268,26 @@ No file abntex2-modelo-relatorio-tecnico.ind.
 \tf@toc=\write8
 \openout8 = `abntex2-modelo-relatorio-tecnico.toc'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 736.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 736.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 737.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 737.
  (./abntex2-modelo-relatorio-tecnico.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 736.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 736.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 737.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 737.
 Package rerunfilecheck Info: File `abntex2-modelo-relatorio-tecnico.brf' has no
 t changed.
 (rerunfilecheck)             Checksum: 18B8E7C9164A0EF772C9C2709C3CA642;336.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 736.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 737.
  )
 (\end occurred inside a group at level 1)
 
 ### simple group (level 1) entered at line 209 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 15075 strings out of 481239
- 240125 string characters out of 5920377
+ 15085 strings out of 481239
+ 240233 string characters out of 5920377
  734948 words of memory out of 5000000
  29799 multiletter control sequences out of 15000+600000
- 603158 words of font info for 118 fonts, out of 8000000 for 9000
+ 603613 words of font info for 123 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  42i,13n,43p,729b,680s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/share/
@@ -1305,7 +1305,7 @@ sr/share/texmf/fonts/type1/public/lm/lmss17.pfb></usr/share/texmf/fonts/type1/p
 ublic/lm/lmssbx10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsso12.pfb></usr
 /share/texmf/fonts/type1/public/lm/lmsy10.pfb></usr/share/texmf/fonts/type1/pub
 lic/lm/lmsy8.pfb>
-Output written on abntex2-modelo-relatorio-tecnico.pdf (30 pages, 2168176 bytes
+Output written on abntex2-modelo-relatorio-tecnico.pdf (30 pages, 2169481 bytes
 ).
 PDF statistics:
  567 PDF objects out of 1000 (max. 8388607)

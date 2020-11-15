@@ -217,10 +217,13 @@ com as normas ABNT apresentado à comunidade de usuários \LaTeX.}
 % resumo na língua vernácula (obrigatório)
 \setlength{\absparsep}{18pt} % ajusta o espaçamento dos parágrafos do resumo
 \begin{resumo}
- Resumindo o início, meio e fim do trabalho
+O trabalho apresentado aqui mostra a teoria e simulações de três tipos, os controladores de primeira ordem, segunda ordem e, por último, um arranjo de dois controladores em cascata. Sempre usando o \textit{software} Matlab para essas simulações. 
+
+De forma simplificada, vimos que é possível diminuir o sobressinal e o tempo para atingir a estabilidade com algumas configurações mais elaboradas de controle, combinando filtros ou até mesmo fazendo o controle em cascata, porém, para atingir resultados melhores é extremamente importante saber escolher os valores para as constantes, caso contrário o resultado final pode ser pior até que o de um sistema P simples.
+
 
  \noindent
- \textbf{Palavras-chaves}: Sistema de Primeira Ordem. PID. Sistemas Dinâmicos.
+ \textbf{Palavras-chaves}: Sistemas de controle. PID. Sistemas Dinâmicos.
 \end{resumo}
 % ---
 
@@ -609,8 +612,6 @@ O filtro \textit{anti windup} deveria apresentar um sinal melhor que o controlad
 \end{figure}
 
 \section{Controlador de Segunda Ordem}
-
- INSERIR TEXTO AQUI
  
 \subsection{Implementação do controlador proporcional em segunda ordem}
  
