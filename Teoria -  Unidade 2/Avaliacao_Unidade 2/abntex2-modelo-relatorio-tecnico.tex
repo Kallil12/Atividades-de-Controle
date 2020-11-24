@@ -333,17 +333,63 @@ Para o ponto de equilíbrio, usando $T_R=0$, $T=4.705K$, $C_A = 0.76456 \ \frac{
 
 É pedido que seja projetado um controlador PID, ou PI, para o sistema proposto, aplicando-o ao modelo não-linear. Devem ser considerador como critérios para o projeto um sobressinal máximo de 20\% e um tempo de estabilização de 10 minutos, o controlador também deve ser discretizado para uma amostragem de 0.1 minutos, ou 6 segundos.
 
+Podemos começar analisando o critério de \textit{overshoot} e tempo de estabilização, que será convertido em segundos. Serão usadas as seguintes fórmulas:
+
+\begin{equation}
+	\xi = \frac{\ln(overshoot)}{\sqrt{\pi^2+\ln^2overshoot}}
+\end{equation}
+
+E
+
+\begin{equation}
+	t_s(5\%) = \frac{3}{\xi\omega_n}
+\end{equation}
+
+Agora, aplicando as especificações de desempenho temos:
+
+$$\xi = \frac{\ln(0,2)}{\sqrt{\pi^2 + \ln(0,2)}}$$
+
+resultando em:
+
+$$\xi = 0,45594$$
+
+Agora, usando o requisito do tempo temos:
+
+$$t_s(5\%) \leq 600 $$
+$$600 = \frac{3}{\xi\omega_n}$$
+$${\xi\omega_n} = 0,005$$
+
+portanto, 
+
+$$\xi = 0,010966$$
+
+Agora, precisamos encontrar o $\omega_d$.
+
+$$\omega_d = \omega \sqrt{1-\xi^2}$$
+$$\omega_d = 0,0097598$$
+
+Assim, temos os polos de malha fechada, que são:
+
+$$s_{1,2} = 0,005 \pm 0,00976i$$
+
+Com os valores de $\omega_d$, $\omega$ e $\xi$ em mãos, podemos descobrir os ângulos, dessa forma obtemos: $\theta_1 = \theta_2 = 178,902645^{\circ}$, $\theta_3 = 90^{\circ}$ e $\theta_4 = 0,002443^{\circ}$. Também encontramos $\phi_1 = 0,003258^{\circ}$ e $\phi_2 = \phi_3 = 133,9015^{\circ}$.
+
+Usando a fórmula da raiz nos diferentes pontos encontramos os valores necessários para calcular o $k_i$, que é igual a $6,2332 \cdot 10^{-7}$. Dessa forma encontraremos os coeficientes necessários para montar o controlador, que fica da seguinte forma:
+
+$$G_c(s) = \frac{6,23 \cdot 10^{-7}(s^2+4,95s+6,13))}{s}$$
+
+Então, temos $k_p = 1,35 \cdot 10^{-5}$, $k_i = 1,67\cdot 10^{-5}$ e $k_d = 6,23\cdot 10^{-7} $.
 
 \section{Simulação do controlador}
 
-O projeto proposto deve ser simulado no Matlab, os gráficos serão apresentados a seguir, com o sinal de saída e de controle, aplicando o degrau unitário.
+O projeto proposto deve ser simulado no Matlab, os gráficos serão apresentados a seguir, com o sinal de saída e controle, aplicando o degrau unitário. A simulação não conseguiu atender aos requisitos impostos, demorando $697$ segundos para acomodar, mas respeitou os $20\%$ de sobressinal.
 
-%\begin{figure}[h]
-%	\centering
-%	\includegraphics[scale=0.33]{osciloscopio_ganho_10.jpg}
-%	\caption{Controlador P Ganho 10 - Sinal de entrada}
-%	\label{fig:controladorPG10}
-%\end{figure}
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.50]{imagens/2_matlab.PNG}
+	\caption{Comportamento do sistema}
+	\label{fig:sist_matlab}
+\end{figure}
 
 %\ref{fig:controladorPG10}
 

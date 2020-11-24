@@ -5,12 +5,6 @@
 \providecommand{\abntbstabout}[1]{}
 \abntbstabout{v-1.9.7 }
 
-\bibitem[Araújo 2020]{meneghetti1}
-\abntrefinfo{Araújo}{ARAúJO}{2020}
-{ARAúJO, F. M.~U. de. \emph{Roteiro de laboratório 2A}. 2020.
-Dispon{\'\i}vel em: \url{http://www.dca.ufrn.br/~meneghet}. Acesso em: 20 set.
-  2020.}
-
 \bibitem[Ogata 2001]{ogata}
 \abntrefinfo{Ogata}{OGATA}{2001}
 {OGATA, K. \emph{Modern Control Engineering}. [S.l.]: Prentice Hall, 2001.}
