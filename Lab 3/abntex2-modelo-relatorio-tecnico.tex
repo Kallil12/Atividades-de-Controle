@@ -302,9 +302,25 @@ O controlador PID esteve em uso por mais de um século em várias formas e aplic
 As três letras que compõem o PID vem de Proporcional, Integral e Derivativo, e cada um desses elementos tem uma tarefa diferente, portanto, causam diferentes efeitos na funcionalidade de um sistema. Num típico controle PID esses elementos são orientados por uma combinação de comandos do sistema e de respostas do sinal que está sendo controlado.
 
 
-\section{Controlador Proporcional (P)}
+\section{Espaço de Estados}
 
-O controle Proporcional é o tipo de resposta mais simples, ele é composto pelo erro sendo multiplicado por uma constante e adicionado, ou alimentado, ao \textit{drive}.
+O controle no Espaço de Estados é aplicável a sistemas de múltiplas entradas e múltiplas saídas, que podem ser lineares ou não-lineares, invariantes ou variantes no tempo e com condições iniciais nulas ou não. Considera-se que o estado de um sistema no instante $t_0$ é a quantidade de informação em $t_0$ que, em combinação com a entrada $u(t)$ em $t \geq t_0$, determina univocamente o comportamento do sistema para todo $t \geq t_0$.
+
+Assim, temos a representação de um sistema dinâmico no espaço de estados com as seguintes equações:
+
+\begin{equation}
+	\dot{x(t)} = f(x(t), u(t),t)
+	\label{eqn:equacao_estados}
+\end{equation}
+
+E
+
+\begin{equation}
+	y(t) = g(x(t), u(t),t)
+	\label{eqn:equacao_saida}
+\end{equation}
+
+Em que a equação \ref{eqn:equacao_estados} é a Equação de Estados e a \ref{eqn:equacao_saida} é a Equação de Saída.
 
 \begin{equation}
 U(s) = K_pE(s)
@@ -355,11 +371,11 @@ Dentre as características do controlador PD podemos citar \cite{meneghetti1}:
 
 \section{Controlador Proporcional Integral Derivativo (PID)}
 
-\begin{figure}[h]
-	\centering
-	\includegraphics[scale=0.70]{planta.jpg}
-	\caption{Planta PID simples}
-\end{figure}
+%\begin{figure}[h]
+%	\centering
+%	\includegraphics[scale=0.70]{planta.jpg}
+%	\caption{Planta PID simples}
+%\end{figure}
 
 De forma resumida, o controlador PID, trabalhando numa malha fechada, tem a estrutura mostrada na imagem acima. A variável $e$ representa o erro, que é a diferença entre a saída desejada $r$ e a saída real $y$. Esse sinal de erro é alimentado para o controlador PID, que calcula tanto a derivada como a integral desse sinal de erro em relação ao tempo. O sinal do controlador, $u$, para a planta é igual ao ganho proporcional $K_p$ vezes a magnitude do erro mais a integral do ganho $K_i$ vezes a integral do erro mais a derivada do ganho $K_d$ vezes a derivada do erro.
 
@@ -421,298 +437,7 @@ O controle em cascata é implementado quando a malha de controle simples não re
 No arranjo proposto pelo roteiro pode-se manipular a tensão enviada para a bomba e obter o nível desejado no tanque 1, que influencia na vazão de saída afetando a vazão de entrada do tanque 2. O objetivo é controlar o nível do segundo tanque a partir do primeiro, então com uma malha externa de controle é preciso captar o erro entre a referência desejada e o nível do tanque 2 e fornecer um valor para o tanque 1, alterando a tensão do motor e aumentando, ou diminuindo, o nível do segundo tanque.
 \chapter{Desenvolvimento e resultados}
 
-O experimento consiste dos seguintes pontos:
-\begin{enumerate}
-    \item Implementar a ação proporcional, formando controladores P, e realizar testes com diferentes valores de ganho;
-    \item Realizando testes em cada etapa, faça o proposto:
-    \begin{enumerate}
-        \item Implemente a ação integrativa, formando controladores PI;
-        \item Implemente a ação derivativa, permitindo agora formar controladores PD e PID;
-        \item Implemente o filtro na ação derivativa;
-        \item Implemente o filtro \textit{anti-reset-windup}.
-    \end{enumerate}
-    \item Descrever a diferença no comportamento do sistema com cada uma das leis de controle implementada. Levando em consideração as entradas degrau e senoide;
-    \item Para cada lei de controle, verificar e descrever o comportamento do sistema para diferentes valores dos ganhos.
-\end{enumerate}
-% ---
-\section{Implementação da ação proporcional - controlador P}
 
-Como foi dito anteriormente, esse é o controlador mais simples, pois o sinal de saída é proporcional ao erro. Para implementar esse tipo de controlador basta colocar um ganho entre o comparador e o bloco de saturação.
-
-\begin{figure}[h]
-	\centering
-	\includegraphics[scale=0.70]{controlador_p.PNG}
-	\caption{Controlador Proporcional}
-\end{figure}
-\newpage
-
-Com isso feito, a simulação apresenta o seguinte comportamento de acordo com os ganhos.
-
-\subsection{Controlador P - ganho 1}
-
-O controlador P é o mais simples, ele apenas vai tentar compensar o erro de forma proporcional. Começamos com ganho unitário, ou seja, praticamente não haverá correção do erro.
-
-\begin{figure}[h]
-	\centering
-	\includegraphics[scale=0.30]{controlador_p_ganho_1.jpg}
-	\caption{Controlador P - Ganho 1}
-\end{figure}
-
-Na imagem acima é possível ver que o ganho unitário não alcança o valor desejado, então fica abaixo do que seria ideal, 15. Não há muito o que discutir nesse caso, mas nos próximos ganhos, de 5 e 10, veremos diferenças.
-
-\begin{figure}[h]
-	\centering
-	\includegraphics[scale=0.30]{osciloscopio_ganho_1.jpg}
-	\caption{Controlador P Ganho 1 - Sinal de entrada}
-\end{figure}
-
-\subsection{Controlador P - ganhos 5 e 10}
-
-No caso de ganhos maiores, 5 e 10 no exemplo apresentado, o controlador vai aplicar esses valores tentando corrigir o erro encontrado, se o ganho for muito alto, o controlador vai aplicar "mais vezes" tentando compensar a maior distância em relação ao valor ideal, de novo, 15. Esse comportamento pode ser visto no nível, como mostrado a seguir.
-
-\begin{figure}[h]
-	\centering
-	\includegraphics[scale=0.30]{controlador_p_ganho_5.jpg}
-	\caption{Controlador P - Ganho 5}
-\end{figure}
-
-\begin{figure}[h]
-	\centering
-	\includegraphics[scale=0.30]{controlador_p_ganho_10.jpg}
-	\caption{Controlador P - Ganho 10}
-\end{figure}
-
-E também pode ser visto no sinal do controlador, como pode ser visto abaixo.
-
-\begin{figure}[h]
-	\centering
-	\includegraphics[scale=0.33]{osciloscopio_ganho_5.jpg}
-	\caption{Controlador P Ganho 5 - Sinal de entrada}
-	\label{fig:controladorPG5}
-\end{figure}
-
-\begin{figure}[h]
-	\centering
-	\includegraphics[scale=0.33]{osciloscopio_ganho_10.jpg}
-	\caption{Controlador P Ganho 10 - Sinal de entrada}
-	\label{fig:controladorPG10}
-\end{figure}
-
-O comportamento de compensação do ganho fica muito nítido quando comparamos as figuras \ref{fig:controladorPG5} e \ref{fig:controladorPG10}, em que o Controlador com Ganho 10 aplica o sinal de forma mais frequente e tem uma amplitude maior também, justamente porque o ganho é muito alto e a cada vez que ele aplica esse ganho se distancia bastante do valor que precisa atingir, então aplica um sinal novamente e, de novo, se distancia do objetivo. Esse comportamento se repete constantemente e gera as imagens que podemos analisar.
-
-\clearpage
-\section{Expansão do controlador}
-
-Nessa parte, ainda nos sistemas de primeira ordem, vamos expandir o controlador, adicionando os componentes Integrador e Derivativo. Para realizar esses experimentos, construímos uma simulação já com os três componentes do controlador PID, e quando queríamos apenas um PD, por exemplo, deixamos o $K_i$ igual a 0, então não havia influência do Integrador no sistema. 
-
-A simulação usada foi construída usando como base o arquivo disponibilizado no SIGAA.
-
-\begin{figure}[h]
-	\centering
-	\includegraphics[scale=0.55]{Controlador_pid.PNG}
-	\caption{Controlador PID no Simulink}
-	\label{fig:controladorPID}
-\end{figure}
-
-\subsection{Implementação da ação integrativa - controlador PI}
-
-O termo integral é proporcional à magnitude do erro e à duração do erro. De forma mais detalhada, a integral no PID é a soma dos erros ao longo do tempo, esse termo vai tentar corrigir os erros deslocando a curva. Ele vai acelerar a aproximação ao \textit{setpoint}, e por isso pode causar um \textit{overshoot}. Usamos os valores da tabela \ref{tab:tabelaPI} no experimento.
-
-\begin{table}[h]
-\centering
-\begin{tabular}{ccc}
-\multicolumn{0}{c}{} $K_p$ & $K_i$ & $K_d$ \\\hline
-                    1,0 & 0,01 & 0 \\
-                    1,0 & 0,02 & 0 \\
-                    2,0 & 0,01 & 0
-\end{tabular}
-\caption{Valores do controlador PI}
-\label{tab:tabelaPI}
-\end{table}
-
-\begin{figure}[h]
-	\centering
-	\includegraphics[scale=0.30]{1 - nivel_PI_1kp_001ki.jpg}
-	\caption{Controlador PI - nível dos tanques - $K_p = 1$ e $K_i = 0,01$}
-	\label{fig:controladorPI_1}
-\end{figure}
-
-\begin{figure}[h]
-	\centering
-	\includegraphics[scale=0.30]{1 - PI sinal_controle.jpg}
-	\caption{Controlador PI - sinal de controle - $K_p = 1$ e $K_i = 0,01$}
-	\label{fig:sinal_controladorPI_1}
-\end{figure}
-
-\begin{figure}[h]
-	\centering
-	\includegraphics[scale=0.30]{1 - PI acoes_controle.jpg}
-	\caption{Controlador PI - ações de controle - $K_p = 1$ e $K_i = 0,01$}
-	\label{fig:acao_controladorPI_1}
-\end{figure}
-
-
-\clearpage
-
-Nas imagens \ref{fig:controladorPI_1}, \ref{fig:sinal_controladorPI_1} e \ref{fig:acao_controladorPI_1} é possível notar que o controlador demorou um pouco mais que o tipo P somente para alcançar o \textit{setpoint}, mas uma vez alcançado, o comportamento é bem definido e estável, no sentido de não se distanciar mais do objetivo. É importante testar um controlador com o $K_p$ alto para ver o impacto que o $K_i$ pode causar.
-
-\subsection{Implementação da ação derivativa - controlador PD e PID}
-
-A ação derivativa tenta prever o comportamento do sistema diminuindo o tempo em que se alcança a estabilidade. E esse foi o comportamento notado quando aplicamos a ação derivativa, uma diminuição de aproximadamente 50\% para se alcançar a estabilidade, e uma diminuição do \textit{overshoot}, em alguns casos o \textit{overshoot} nem acontecia.
-
-\begin{figure}[h]
-	\centering
-	\includegraphics[scale=0.30]{4 - nivel_ PDI_1kp_001ki_0001kd.jpg}
-	\caption{Controlador PID - nível dos tanques - $K_p = 1$, $K_i = 0,01$ e $K_d=0,001$}
-	\label{fig:controladorPID_1}
-\end{figure}
-
-\begin{figure}[h]
-	\centering
-	\includegraphics[scale=0.30]{4 - PDI sinal_controle.jpg}
-	\caption{Controlador PI - sinal de controle - $K_p = 1$, $K_i = 0,01$ e $K_d=0,001$}
-	\label{fig:sinal_controladorPID_1}
-\end{figure}
-
-\begin{figure}[h]
-	\centering
-	\includegraphics[scale=0.30]{4 - PDI acoes_controle.jpg}
-	\caption{Controlador PI - ações de controle - $K_p = 1$, $K_i = 0,01$ e $K_d=0,001$}
-	\label{fig:acao_controladorPID_1}
-\end{figure}
-
-\begin{figure}[h]
-	\centering
-	\includegraphics[scale=0.30]{6 - nivel_ PDI_2kp_01ki_0001kd.jpg}
-	\caption{Controlador PID - nível dos tanques - $K_p = 2$, $K_i = 0,01$ e $K_d=0,001$}
-	\label{fig:controladorPID_2}
-\end{figure}
-
-O \textit{overshoot} pode ser visto na figura \ref{fig:controladorPID_2}. Então o conjunto das três ações possíveis trabalha bem, diminuindo o \textit{overshoot} e diminuindo o tempo para se alcançar a estabilidade.
-
-\clearpage
-\subsection{Implementação do filtro na ação derivativa}
-
-No filtro de ação derivativa obtivemos resultados que não foram muito satisfatórios, mesmo alterando os valores dos coeficientes o comportamento era praticamente o mesmo. Apesar de ter apresentado um menor tempo para alcançar a acomodação, a diferença não foi grande, o melhor ponto que pode ser citado aqui é a diminuição do sobressinal.
-
-\begin{figure}[h]
-	\centering
-	\includegraphics[scale=0.20]{Filtro_derivativo_1.jpg}
-	\caption{Filtro derivativo}
-\end{figure}
-
-\subsection{Implementação do filtro \textit{anti-reset-windup}}
-
-O filtro \textit{anti windup} deveria apresentar um sinal melhor que o controlador PID simples, em resumo, ele deveria apresentar menor sobressinal e menor tempo para atingir a estabilidade, porém, obtivemos um comportamento semelhante ao filtro de ação derivativa. Apesar de realmente apresentar uma melhora, é uma mudança muito pequena em relação ao controlador PID convencional, talvez numa planta industrial real a dificuldade de se implementar um filtro desses e o aumento na complexidade da manutenção não compensem o ganho marginal do sinal.
-
-\begin{figure}[h]
-	\centering
-	\includegraphics[scale=0.25]{Filtro_windup_1.png}
-	\caption{Filtro \textit{anti windup}}
-\end{figure}
-
-\section{Controlador de Segunda Ordem}
- 
-\subsection{Implementação do controlador proporcional em segunda ordem}
- 
-Os testes começaram com a implementação do controlador proporcional, testamos com o $K_p = 1,0$, e obtemos os seguintes resultados:
-
-\begin{figure}[h]
-	\centering
-	\includegraphics[scale=0.50]{7 - controlador_P_SO.jpg}
-	\caption{Controlador P - Sistema de Segunda Ordem}
-\end{figure}
-
-\begin{figure}[h]
-	\centering
-	\includegraphics[scale=0.50]{7 - sinal_controle_P_SO.jpg}
-	\caption{Sinal de controle - Sistema de Segunda Ordem}
-\end{figure}
-
-O comportamento, no geral, é o esperado para essa situação porque o aumento do $K_p$ torna o sistema bastante oscilatório e o erro de regime fica menor. O sinal de entrada começa em 35V e fica saturando por aproximadamente 25s, depois se torna bastante oscilatório. Após isso usamos um $K_p=5,8$. O sistema teve um \textit{overshoot} alto, porém houve menos oscilação e o erro de regime aumentou. 
-
-Como foi mostrado, não é recomendado controlar um sistema por meio de um controlador proporcional simples, porque com o aumento do $K_p$ o erro de regime é reduzido ao custo de um sistema com mais oscilação. Comparando isso com uma possível aplicação do mundo real teríamos um sistema que não consegue manter uma boa reprodutibilidade de peças, por exemplo, elas estariam sempre próximo ao desejado, mas apresentariam diferenças entre si. 
-
-\subsection{Implementação do controlador proporcional integral em segunda ordem}
-
-O controlador PI, como já foi dito, é a soma da ação proporcional com a integral, então com essa união a resposta transitória e o erro de regime melhoram, isso é causado pela ação proporcional e integral, respectivamente. Os testes usaram valores de $K_p=3,0$ e $K_i=0,015$.
-
-\begin{figure}[h]
-	\centering
-	\includegraphics[scale=0.25]{9 - pi_1_segunda_ordem.jpg}
-	\caption{Controlador PI - Sistema de Segunda Ordem}
-\end{figure}
-
-Os valores resultaram num \textit{overshoot} alto, no tanque 1, mas no tanque 2 foi baixo. Notamos que o sinal oscila bastante, mas esse comportamento tem se repetido ao longo dos experimentos. Apesar desses problemas, o sistema alcança a estabilidade antes dos 25 segundos.
-
-\begin{figure}[h]
-	\centering
-	\includegraphics[scale=0.25]{9 - pi_11_segunda_ordem.jpg}
-	\caption{Sinal de controle PI - Sistema de Segunda Ordem}
-\end{figure}
-\clearpage
-\subsection{Implementação do controlador PID em segunda ordem}
-
-O controlador PID reúne todas as ações vistas (proporcional, integral e derivativa), elas atuam no regime transitório e permanente. Utilizando os valores $K_p=7,5$, $K_i=0,015$ e $K_d=0,001$, diminuímos o \textit{overshoot}, mas não reduzimos a oscilação. O gráfico da saturação apresenta dois picos que chamam a atenção e não conseguimos consertar.
-
-\begin{figure}[h]
-	\centering
-	\includegraphics[scale=0.25]{10 - pid_1_segunda_ordem.jpg}
-	\caption{Controlador PID - Sistema de Segunda Ordem}
-\end{figure}
-
-\begin{figure}[h]
-	\centering
-	\includegraphics[scale=0.25]{10 - pid_11_segunda_ordem.jpg}
-	\caption{Sinal de controle PID - Sistema de Segunda Ordem}
-\end{figure}
-
-Com esses valores o erro de regime não foi zerado, mas converge para o \textit{setpoint}.
-
-\subsection{Implementação do controlador PID em segunda ordem com filtro derivativo}
-
-A combinação de controlador PID com o filtro derivativo foi a que rendeu os melhores resultados, diferentemente desse conjunto aplicado ao sistema de primeira ordem, o sistema de segunda ordem se comportou muito melhor, diminuindo o erro de regime e o sobressinal.
-
-\begin{figure}[h]
-	\centering
-	\includegraphics[scale=0.25]{12 - pid_segunda_ordem_filtro.jpg}
-	\caption{Sinal de controle PID com filtro derivativo - Sistema de Segunda Ordem}
-\end{figure}
-
-No filtro \textit{anti-reset windup} usamos 0.01, já para as ações usamos $K_p=2,5$, $K_i=0,025$ e $K_d = 0,01$, curiosamente o valor usado no filtro e usado no $K_d$ é o mesmo, e dessa forma conseguimos o gráfico mostrado, mas não entendemos essa relação em específico. Foi notado, de forma empírica, que quando eles eram diferentes haviam mudanças mais significativas no gráfico. 
-\phantompart
-
-\section{Controle em cascata}
-
-Na última parte do segundo experimento usamos dois controladores, sempre com o objetivo de melhorar o desempenho do sistema.
-
-\subsection{Controlador PID com filtro derivativo }
-
-O primeiro teste com o controlador em cascata foi usando um filtro derivativo nos dois controladores, nesse experimento foi utilizado um $K_{pe} = 2,5$. Nessa configuração obtemos um controlador que não era muito preciso em relação ao segundo tanque por causa do sobressinal, no primeiro reservatório o controle foi satisfatório, porque não havia \textit{overshoot} e o tempo de acomodação foi semelhante ao do segundo tanque.
-
-\begin{figure}[h]
-	\centering
-	\includegraphics[scale=0.50]{13_cascata_1.png}
-	\caption{Controlador PID em cascata - filtro derivativo}
-\end{figure}
-
-\subsection{Controlador PID com filtro derivativo e \textit{anti-reset windup}}
-
-Nessa configuração começamos com $K_p = 2$, $K_i = 0,06$ e $K_d = 0.003$ para o mestre, e  $K_p = 1$, $K_i = 0,03$ e $K_d = 0.001$ para o escravo. Esses valores resultaram em uma anulação do \textit{overshoot} e uma convergência do sistema ao nível desejado, apesar disso, o sinal da malha mestre apresenta bastante ruído. Realizamos mais alguns testes, para tentar melhorar o comportamento apresentado pelo gráfico \ref{fig:controlador_cascata_2}, e assim obtivemos o gráfico \ref{fig:controlador_cascata_3}.
-
-\begin{figure}[h]
-	\centering
-	\includegraphics[scale=0.40]{14_controle_cascata_2.jpg}
-	\caption{Controlador PID em cascata - filtro \textit{anti-reset windup}}
-	\label{fig:controlador_cascata_2}
-\end{figure}
-
-\begin{figure}[h]
-	\centering
-	\includegraphics[scale=0.25]{15_controle_cascata_3.jpg}
-	\caption{Controlador PID em cascata 2 - filtro \textit{anti-reset windup}}
-	\label{fig:controlador_cascata_3}
-\end{figure}
 
 \chapter{Conclusão}
 

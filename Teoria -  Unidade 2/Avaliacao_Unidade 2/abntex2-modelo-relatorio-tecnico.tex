@@ -215,7 +215,9 @@ com as normas ABNT apresentado à comunidade de usuários \LaTeX.}
 % resumo na língua vernácula (obrigatório)
 \setlength{\absparsep}{18pt} % ajusta o espaçamento dos parágrafos do resumo
 \begin{resumo}
- Resumindo o início, meio e fim do trabalho
+ O controlador Proporcional-Integral-Derivativo (PID) é o mais usado na indústria e tem sido utilizado há bastante tempo no controle industrial. A adoção dele se dá pelo seu desempenho confiável mesmo em condições adversas, além disso também apresenta uma certa facilidade de implementação. 
+ 
+ Ele é composto por três coeficientes, que podem ser alterados para se obter a resposta ideal. Neste relatório será elaborado um controlador para indústria química, apresentando \textit{overshoot} de 20\% e tempo de estabilização de 600 segundos, ou 10 minutos.
 
  \noindent
  \textbf{Palavras-chaves}: Sistema de Controle. PID. Sistemas Dinâmicos.
@@ -280,9 +282,6 @@ com as normas ABNT apresentado à comunidade de usuários \LaTeX.}
 
 O controle automático tem desempenhado um papel vital no avanço da engenharia e da ciência. Além da sua importância em sistemas de veículos espaciais, sistemas robóticos, e semelhantes, o controle automático tornou-se uma importante parte da fabricação moderna e dos processos industriais. É possível citar o controle numérico de ferramentas e máquinas nas indústrias de manufatura, no projeto de sistemas de piloto automático em operações aeroespaciais e no projeto de carros e caminhões na indústria automobilística. O controle também é essencial no controle de pressão, temperatura, umidade e viscosidade nos processos industriais \cite{ogata}.
 
-No trabalho aqui apresentado, será simulado um sistema que controla um tanque reator de agitação contínuo. Nessa simulação deve haver um controlador PID, ou PI, considerando um sobressinal máximo de 20\% e um tempo de estabilização de 10 minutos. Além disso, as simulações devem ser feitas no Matlab e os gráficos devem ser apresentados. 
-
-
 
 % Ogata - cap 5 - Transient and Steady-State Response Analyses
 % 234/978 - sistemas de primeira ordem
@@ -329,7 +328,7 @@ Para o ponto de equilíbrio, usando $T_R=0$, $T=4.705K$, $C_A = 0.76456 \ \frac{
 
 \chapter{Desenvolvimento}
 
-\section{Projetando o controlador PID}
+\section{Projetando o controlador PI}
 
 É pedido que seja projetado um controlador PID, ou PI, para o sistema proposto, aplicando-o ao modelo não-linear. Devem ser considerador como critérios para o projeto um sobressinal máximo de 20\% e um tempo de estabilização de 10 minutos, o controlador também deve ser discretizado para uma amostragem de 0.1 minutos, ou 6 segundos.
 
@@ -355,31 +354,40 @@ $$\xi = 0,45594$$
 
 Agora, usando o requisito do tempo temos:
 
-$$t_s(5\%) \leq 600 $$
-$$600 = \frac{3}{\xi\omega_n}$$
-$${\xi\omega_n} = 0,005$$
+$$t_s(5\%) \leq 10 $$
+$$10 = \frac{3}{\xi\omega_n}$$
+$${\xi\omega_n} = 0,3$$
 
 portanto, 
 
-$$\xi = 0,010966$$
+$$\omega_n = 0,65776$$
 
 Agora, precisamos encontrar o $\omega_d$.
 
 $$\omega_d = \omega \sqrt{1-\xi^2}$$
-$$\omega_d = 0,0097598$$
+$$\omega_d = 0,5853$$
 
 Assim, temos os polos de malha fechada, que são:
 
-$$s_{1,2} = 0,005 \pm 0,00976i$$
+$$s_{1,2} = -0,3 \pm 05853i$$
 
-Com os valores de $\omega_d$, $\omega$ e $\xi$ em mãos, podemos descobrir os ângulos, dessa forma obtemos: $\theta_1 = \theta_2 = 178,902645^{\circ}$, $\theta_3 = 90^{\circ}$ e $\theta_4 = 0,002443^{\circ}$. Também encontramos $\phi_1 = 0,003258^{\circ}$ e $\phi_2 = \phi_3 = 133,9015^{\circ}$.
+Com os valores de $\omega_d$, $\omega$ e $\xi$ em mãos, podemos descobrir os ângulos, dessa forma obtemos: $\theta_1 = 178,8846 ^ {\circ}$ e $\theta_2 = 181,1153^{\circ}$. Também encontramos $\phi_1 = 0,1,1963^{\circ}$ e $\phi_2$ será calculado, para que o $z$ seja encontrado. Com o zero faltando encontrado, temos $z = 7,4693$. 
 
-Usando a fórmula da raiz nos diferentes pontos encontramos os valores necessários para calcular o $k_i$, que é igual a $6,2332 \cdot 10^{-7}$. Dessa forma encontraremos os coeficientes necessários para montar o controlador, que fica da seguinte forma:
+Com isso, construímos o seguinte controlador PI:
 
-$$G_c(s) = \frac{6,23 \cdot 10^{-7}(s^2+4,95s+6,13))}{s}$$
+$$G_c(s) = \frac{(s+z)^2}{s}$$ 
 
-Então, temos $k_p = 1,35 \cdot 10^{-5}$, $k_i = 1,67\cdot 10^{-5}$ e $k_d = 6,23\cdot 10^{-7} $.
+$$G_c(s) = \frac{s^2 + 14,94s + 55,79}{s}$$
 
+Então, temos $k_p = 14,93$ e $k_i = 55,79$.
+
+Na discretização foi usado o método \textit{forward}, encontrando a seguinte forma:
+
+$$G(z) = \frac{10z^2 - 5,07z + 0,649}{(z-1)}$$
+
+Ao fim do relatório estão as anotações originais feitas para resolver a atividade proposta.
+
+\newpage
 \section{Simulação do controlador}
 
 O projeto proposto deve ser simulado no Matlab, os gráficos serão apresentados a seguir, com o sinal de saída e controle, aplicando o degrau unitário. A simulação não conseguiu atender aos requisitos impostos, demorando $697$ segundos para acomodar, mas respeitou os $20\%$ de sobressinal.
