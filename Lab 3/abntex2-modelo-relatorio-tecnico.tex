@@ -62,6 +62,7 @@
 \usepackage{microtype} 			% para melhorias de justificação
 \usepackage{nameref}
 \usepackage{chngcntr}
+\usepackage{amsmath}            % para escrever matrizes
 \counterwithin{equation}{chapter}
 \counterwithin{figure}{chapter}
 \counterwithin{table}{chapter}
@@ -110,7 +111,7 @@
 % ---
 % Informações de dados para CAPA e FOLHA DE ROSTO
 % ---
-\titulo{Controle PID de Sistemas Dinâmicos: Sistema de Primeira Ordem}
+\titulo{Controle no Espaço de Estados}
 \autor{José E. de A. Junior: 20170009356\\
 \vspace{0.8cm}
 Kallil de A. Bezerra: 20180154987\\
@@ -119,7 +120,7 @@ Rafael de M. M. Capuano: 20180010172\\
 \vspace{0.8cm}
 Victor K. C. Sousa: 20180155278\\}
 \local{Brasil}
-\data{9 de outubro de 2020}
+\data{Dezembro de 2020}
 \instituicao{%
   Universidade Federal do Rio Grande do Norte -- UFRN
   \par
@@ -217,13 +218,12 @@ com as normas ABNT apresentado à comunidade de usuários \LaTeX.}
 % resumo na língua vernácula (obrigatório)
 \setlength{\absparsep}{18pt} % ajusta o espaçamento dos parágrafos do resumo
 \begin{resumo}
-O trabalho apresentado aqui mostra a teoria e simulações de três tipos, os controladores de primeira ordem, segunda ordem e, por último, um arranjo de dois controladores em cascata. Sempre usando o \textit{software} Matlab para essas simulações. 
-
-De forma simplificada, vimos que é possível diminuir o sobressinal e o tempo para atingir a estabilidade com algumas configurações mais elaboradas de controle, combinando filtros ou até mesmo fazendo o controle em cascata, porém, para atingir resultados melhores é extremamente importante saber escolher os valores para as constantes, caso contrário o resultado final pode ser pior até que o de um sistema P simples.
+	
+Nesse relatório serão apresentadas e descritas experiências e seus resultados, desenvolvidos no \textit{software} Matlab. Através de diferentes simulações, foi aplicado o uso do espaço de estados para controle. Testando diferentes representações de sistema de estados, alterando suas variáveis, possibilitando observadores de estados e seguidores de referência, separadamente e em conjunto. Esse trabalho, além de reforçar o que é visto na teoria, também desenvolve melhoramentos na resolução de problemas de controle, que contribuirão no desenvolvimento de soluções de problemas reais.
 
 
  \noindent
- \textbf{Palavras-chaves}: Sistemas de controle. PID. Sistemas Dinâmicos.
+ \textbf{Palavras-chaves}: Sistemas de controle. PID. Sistemas de Estados.
 \end{resumo}
 % ---
 
@@ -285,12 +285,8 @@ De forma simplificada, vimos que é possível diminuir o sobressinal e o tempo p
 
 O controle automático tem desempenhado um papel vital no avanço da engenharia e da ciência. Além da sua importância em sistemas de veículos espaciais, sistemas robóticos, e semelhantes, o controle automático tornou-se uma importante parte da fabricação moderna e dos processos industriais. É possível citar o controle numérico de ferramentas e máquinas nas indústrias de manufatura, no projeto de sistemas de piloto automático em operações aeroespaciais e no projeto de carros e caminhões na indústria automobilística. O controle também é essencial no controle de pressão, temperatura, umidade e viscosidade nos processos industriais \cite{ogata}.
 
-Os avanços na teoria e na prática do controle fornecem meios para atingir o desempenho desejado dos sistemas dinâmicos, melhorando a produtividade e aliviando o trabalho penoso de algumas atividades. Portanto, os engenheiros e cientistas precisam ter uma boa compreensão deste campo para poder aplicar e entender o que está sendo aplicado na prática.
+As representações em espaço de estados são modelos matemáticos de um sistema, nesses modelos existem um conjunto de variáveis de entrada, saída e estados relacionados entre si por meio de equações diferenciais de primeira ordem. Essa representação fornece uma forma mais prática para modelar e analisar sistemas que possuem múltiplas entradas e saídas. O regulador de estados tem o objetivo de manter o sistema em uma condição fixa de operação, enquanto que o servo atua na saída, garantindo que os resultados estejam de acordo com um comando desejado. De forma resumida, os reguladores possuem uma boa rejeição ao distúrbio, mas apresentam dificuldades para seguir trajetórias ou sinais de referência.
 
-
-
-% Ogata - cap 5 - Transient and Steady-State Response Analyses
-% 234/978 - sistemas de primeira ordem
 
 % ----------------------------------------------------------
 % PARTE - preparação da pesquisa
@@ -313,139 +309,62 @@ Assim, temos a representação de um sistema dinâmico no espaço de estados com
 	\label{eqn:equacao_estados}
 \end{equation}
 
-E
+e
 
 \begin{equation}
 	y(t) = g(x(t), u(t),t)
 	\label{eqn:equacao_saida}
 \end{equation}
 
-Em que a equação \ref{eqn:equacao_estados} é a Equação de Estados e a \ref{eqn:equacao_saida} é a Equação de Saída.
+Em que a equação \ref{eqn:equacao_estados} é a Equação de Estados e a \ref{eqn:equacao_saida} é a de Saída.
+
+Nas equações acima $x(t)$ é o vetor de estados, $u(t)$ é o de entrada e $y(t)$ é o vetor de saída. Por último $f(\cdots)$ e $g(\cdots)$ são funções não-lineares.
+
+Porém, se o sistema for modelado como um sistema linear e invariante no tempo, ele poderá ser representado pelas seguintes equações:
 
 \begin{equation}
-U(s) = K_pE(s)
+	\dot{x(t)} = Ax(t) + Bu(t)
+	\label{eqn:equacao_estados_din}
 \end{equation}
 
-Dentre as características do controlador P podemos citar \cite{meneghetti1}:
-
-\begin{itemize}
-    \item O controlador proporcional é um amplificador com ganho ajustável (K);
-    \item O aumento do ganho K diminui o erro do regime;
-    \item Em geral, o aumento de K torna o sistema mais oscilatório, podendo gerar instabilidade;
-    \item Melhora o regime e piora o transitório, sendo bastante limitado.
-\end{itemize}
-
-
-\section{Controlador Proporcional Integral (PI)}
-
-O controle Integral é usado para adicionar uma precisão de longo termo ao \textit{loop} do controle, normalmente é usado com controle Proporcional. 
+e
 
 \begin{equation}
-U(s) = \frac{(K_ps+K_i)}{S}E(s)
+	y(t) = Cx(t) + Du(t)
+	\label{eqn:equacao_saida_din}
 \end{equation}
 
-Dentre as características do controlador PI podemos citar \cite{meneghetti1}:
-\begin{itemize}
-    \item Zera o erro de regime, pois aumenta o tipo do sistema em 1 unidade;
-    \item É utilizando quando tempos resposta transitória aceitável e resposta em regime insatisfatória;
-    \item Adiciona um polo em $p=0$ e um zero em $z = \frac{-K_i}{K_p} = \frac{-1}{\tau_i}$;
-    \item Como aumenta a ordem do sistema, tempos a possibilidade de instabilidade do sistema original. Pode degradar o desempenho do controlador em malha fechada.
-\end{itemize}
+Nas equações \ref{eqn:equacao_estados_din} e \ref{eqn:equacao_saida_din} as matrizes $A_{nxn}$,$B_{nxp}$,$C_{qxn}$ e $D_{qxp}$ são os parâmetros que modelam a dinâmica do sistema. Em resumo, a realimentação de estados consistem em alocar os polos de malha fechada, modificando a dinâmica do sistema.
 
-\section{Controlador Proporcional Derivativo (PD)}
+\subsection{Controlabilidade}
 
-É conhecido que o controle proporcional trabalha com o comportamento presente da planta, e o integral trabalha com o passado do sistema. O controlador derivativo tenta prever como será o comportamento do sistema, tentando adiantar a estabilidade. O componente diferencial é, resumidamente, a última posição conhecida menos o valor atual da posição.
+Para um sistema linear e invariante no tempo poder ser \textit{controlável} deve existir um vetor de entrada $u(t)$ com $T>0$ e finito, para $0 \leq t \leq T$, de forma que o sistema passe de uma condição inicial para qualquer outro estado em um intervalo de tempo. Um sistema é dito controlável se a matriz de controlabilidade $U$ tem posto, ou seja, possui o número de linhas não-nulas, igual a ordem da matriz de estado $(n)$. Esse conceito é importante no projeto de estabilizadores, porque descreve a capacidade de se variar um sistema sem sair dos parâmetros desejados pelo projeto.
 
 \begin{equation}
-U(s) = (K_p + K_ds)E(s)
+	U = \left[B \; AB \; A^2B \; \cdots \; A^{n-1}B \right]
 \end{equation}
 
-Dentre as características do controlador PD podemos citar \cite{meneghetti1}:
+\subsection{Observabilidade}
 
-\begin{itemize}
-    \item Leva em conta a taxa de variação do erro;
-    \item É utilizado quando temos resposta em regime aceitável e resposta transitória insatisfatória;
-    \item Adiciona um zero em $z = \frac{-K_p}{K_d}= \frac{-1}{\tau_d}$;
-    \item Introduz um efeito de antecipação no sistema, fazendo com que o mesmo reaja não somente à magnitude do sinal de erro, como também à sua tendência para o instante futuro, iniciando, assim, uma ação corretiva mais cedo.
-\end{itemize}
+Para um sistema linear e invariante no tempo poder ser \textit{observável} deve existir um vetor de entrada $u(t)$ e de saída $t(t)$, em qualquer instante $0 \leq t \leq T$. De forma semelhante à controlabilidade, um sistema observável deve ter a matriz $V$ com posto igual a matriz de estados $(n)$.
 
-\section{Controlador Proporcional Integral Derivativo (PID)}
+
+\begin{equation}
+V =
+\begin{bmatrix}
+	C\\
+	CA\\
+	CA^2\\
+	\vdots \\
+	CA^{n-1}
+\end{bmatrix}
+\end{equation}
 
 %\begin{figure}[h]
 %	\centering
 %	\includegraphics[scale=0.70]{planta.jpg}
 %	\caption{Planta PID simples}
 %\end{figure}
-
-De forma resumida, o controlador PID, trabalhando numa malha fechada, tem a estrutura mostrada na imagem acima. A variável $e$ representa o erro, que é a diferença entre a saída desejada $r$ e a saída real $y$. Esse sinal de erro é alimentado para o controlador PID, que calcula tanto a derivada como a integral desse sinal de erro em relação ao tempo. O sinal do controlador, $u$, para a planta é igual ao ganho proporcional $K_p$ vezes a magnitude do erro mais a integral do ganho $K_i$ vezes a integral do erro mais a derivada do ganho $K_d$ vezes a derivada do erro.
-
-\begin{equation}
-u(t) = K_pe(t) + K_i\int e(t)\,dt + K_p\frac{de}{dt}
-\end{equation}
-
-Esse sinal de controle, $u$, é passado para a planta e a nova saída $y$ é obtida. Essa nova saída é enviada de volta e comparada à referência para que se encontre o novo sinal de erro. O controlador recebe esse novo sinal e atualizada a entrada do controlador. Esse processo continua enquanto o controlador estiver funcionando.
-
-\section{Filtros}
-
-Os filtros têm por objetivo tornar o controle implementado, diminuindo o sobressinal e o tempo para se alcançar o \textit{setpoint}.
-
-\subsection{Filtro derivativo}
-
-O filtro derivativo age no regime transitório. Esse tipo específico de filtro tenta prever alguns comportamentos, eliminando ruídos de alta frequência e suavizando o efeito do ruído no controle. No caso real a queda da água, por exemplo, poderia ser considerada como um ruído, porque essa queda causaria um distúrbio no tanque. Na simulação é um pouco mais difícil de notar esse tipo de comportamento, então, adiantando a parte prática, encontramos um pouco de dificuldade de ver o efeito dele no sistema.
-
-\subsection{Filtro \textit{anti windup}}
-
-Sistemas de controle podem sofrer com resposta transitória lenta e oscilatória se houver, como entrada, um sinal saturado, pois a malha de realimentação é desfeita quando esse valor não é considerado. Isso faz com que a saída demore muito para atingir o \textit{setpoint} e apresente oscilações frequentes, esses dois comportamentos são indesejáveis numa planta industrial. Então, para atacar esse problema existe o filtro \textit{anti windup}, que faz com que o controlador saia da região da saturação e volte para o comportamento esperado.
-
-\section{Sistemas de segunda ordem}
-
-Até aqui foram discutidos os conceitos necessários para a realização da primeira parte do experimento, para a segunda parte serão necessários alguns novos conceitos relacionados aos sistemas de segunda ordem. 
-
-Os sistemas de segunda ordem são aqueles cujo modelo pode ser escrito por uma equação diferencial de segunda ordem, ou seja, os que possuem dois polos \cite{dan_madeira}.
-
-O comportamento dos sistemas de segunda ordem é bastante sensível à mudança nos parâmetros, então é importante fazer uma classificação dos perfis existentes para esses sistemas, tentando entender melhor os fenômenos que ocorrem em cada caso. Durante as simulações foi notado que apesar de haver bastante matemática por trás dos modelos, muita coisa pode ser entendida de forma mais fácil de forma empírica, alterando os parâmetros e analisando a mudança nos gráficos.
-
-Existem três tipos principais de sistemas de segunda ordem, são eles:
-\begin{enumerate}
-	\item Superamortecido: um polo na origem, proveniente da entrada degrau unitário e dois polos reais;
-	
-	\item Subamortecido: um polo na origem proveniente da entrada degrau unitário e dois polos complexos, vindos do sistema;
-	
-	\item Criticamente amortecido: um polo na origem proveniente da entrada degrau unitário e dois polos reais iguais.		
-\end{enumerate}
-
-\subsection{Sistemas de segurança}
-
-No segundo experimento será necessário implementar um sistema de segurança que impeça a água de transbordar, mas a bomba também não pode trabalhar sem água, numa situação real ela poderia queimar. Então será feito um sistema de segurança que não permita nem que haja um transbordamento nem uma quebra do motor. 
-
-Esse tipo de segurança é definido como sendo um conjunto de passos, na lógica de automação e controle, que devem existir para garantir a segurança de um equipamento, pessoa ou processo \cite{meneghetti1}. Nesses casos as travas lógicas, que são implementadas em \textit{software} e as travas físicas, que são \textit{hardware}, são usadas para garantir a segurança das pessoas e a continuidade da produção.
-
-O sistema vai monitorar certas condições da planta, tentando mante-la dentro do limite operacional estabelecido, e quando condições de risco, ou que estiverem fora dos parâmetros criados, forem detectadas ele deve acionar alarmes, ou também pode atuar nos erros.
-
-Na simulação as seguintes regras devem ser seguidas e implementadas no sistema de segurança:
-
-\begin{itemize}
-	\item Não deve ser enviado para o sistema uma tensão fora dos limites de $\pm 4V$;
-	\item A bomba não pode trabalhar sem que haja líquido a ser bombeado;
-	\item Nenhum dos dois tanques pode transbordar.
-\end{itemize}
-
-\section{Controle em cascata}
-
-O controle em cascata é implementado quando a malha de controle simples não responde satisfatoriamente, principalmente em processos que possuem uma perturbação contínua em torno da variável que se deseja manipular, ou seja, o nível do tanque 2 com o constante recebimento de água a partir do tanque 1 pode se encaixar nessa situação. O controle em cascata consiste de um controlador primário que regula um controlador secundário, melhorando a velocidade de resposta e reduzindo os distúrbios causados pela malha secundária
-
-No arranjo proposto pelo roteiro pode-se manipular a tensão enviada para a bomba e obter o nível desejado no tanque 1, que influencia na vazão de saída afetando a vazão de entrada do tanque 2. O objetivo é controlar o nível do segundo tanque a partir do primeiro, então com uma malha externa de controle é preciso captar o erro entre a referência desejada e o nível do tanque 2 e fornecer um valor para o tanque 1, alterando a tensão do motor e aumentando, ou diminuindo, o nível do segundo tanque.
-\chapter{Desenvolvimento e resultados}
-
-
-
-\chapter{Conclusão}
-
-As simulações permitiram que fosse melhor entendido o comportamento dos controladores P, PI, PD e PID, e além desses, também implementamos os filtros, para entender o impacto que eles causam nos sinais dos controladores. Nos experimentos 2A e 2B o objetivo era controlar os níveis dos tanques 1 e 2, respectivamente, e no experimento 2C era pedido que apenas o segundo tanque fosse controlado. Para analisar os gráficos observamos o tempo de estabilidade, o tempo de subida, o sobressinal e a oscilação.
-
-Foi observado que no sistema de primeira ordem, de acordo com nossas simulações, o tempo de estabilidade é menor em relação ao de segunda ordem, e também oscila menos. Além disso, esperávamos encontrar resultados melhores com o controle em cascata, porém o tempo de estabilidade aumentou e também ficou mais instável, isso pode ser um problema de \textit{tunning}, mas mesmo com pesquisa e vários testes empíricos não chegamos a um resultado realmente bom, que justifique o aumento de complexidade na implementação do controle em cascata numa planta industrial real, por exemplo.
-
-Em todos os experimentos foi possível ver a ação proporcional, integral e derivativa, e as consequências de cada uma delas nos gráficos. Portanto, para diminuição de erro de regime, regula-se o $K_i$, para atuar na oscilação usamos o $K_p$ e para tornar o tempo de acomodação menor é importante usar o $K_d$.
 
 
 \postextual
