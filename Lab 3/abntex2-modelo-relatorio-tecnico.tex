@@ -305,7 +305,7 @@ O controle no Espaço de Estados é aplicável a sistemas de múltiplas entradas
 Assim, temos a representação de um sistema dinâmico no espaço de estados com as seguintes equações:
 
 \begin{equation}
-	\dot{x(t)} = f(x(t), u(t),t)
+	\dot{x}(t) = f(x(t), u(t),t)
 	\label{eqn:equacao_estados}
 \end{equation}
 
@@ -323,7 +323,7 @@ Nas equações acima $x(t)$ é o vetor de estados, $u(t)$ é o de entrada e $y(t
 Porém, se o sistema for modelado como um sistema linear e invariante no tempo, ele poderá ser representado pelas seguintes equações:
 
 \begin{equation}
-	\dot{x(t)} = Ax(t) + Bu(t)
+	\dot{x}(t) = Ax(t) + Bu(t)
 	\label{eqn:equacao_estados_din}
 \end{equation}
 
@@ -359,6 +359,24 @@ V =
 	CA^{n-1}
 \end{bmatrix}
 \end{equation}
+
+\section{Observadores de Estado}
+
+Observador de Estado é um mecanismo usado para estimar os estados de um sistema. Normalmente, apenas as saídas dos sistemas são conhecidas, então só elas estão disponíveis para realimentação. A principal aplicação dele é em controladores que são realimentados pelos estados, nesse tipo de controlador é importante que os estados sejam conhecidos a todo instante.
+
+\section{Seguidor de Referência}
+
+É importante que o sistema desenvolvido siga o comportamento determinado pelo projetista, então, além de possuir a dinâmica desejada ele deve seguir uma determinada entrada e com erro zero. Sabendo disso, deve ser adicionado ao modelo alguma informação sobre o sinal de referência. Isso pode ser alcançado adicionando os termos proporcionais na equação do controlador. 
+
+\begin{equation}
+	\begin{split}
+	\dot{x} = A_r x_r \\ 
+    r = C_r x_r
+	\end{split}
+\label{eqn:seguidor_ref}
+\end{equation}
+
+Na equação \ref{eqn:seguidor_ref} o $x_r$ é o sinal de referência.
 
 %\begin{figure}[h]
 %	\centering

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.8.24)  9 DEC 2020 12:46
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.8.24)  9 DEC 2020 14:32
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1054,17 +1054,17 @@ l.205
 ]
 LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <12> not available
 (Font)              Font shape `T1/lmss/m/sl' tried instead on input line 341.
-
+ [8]
 (./abntex2-modelo-relatorio-tecnico.bbl (./abntex2-modelo-relatorio-tecnico.brf
 )
 \tf@brf=\write5
 \openout5 = `abntex2-modelo-relatorio-tecnico.brf'.
 
- [8]
+ [9]
 bibitemlist
 )
 No file abntex2-modelo-relatorio-tecnico.ind.
-[9
+[10
 
 ]
 \tf@lof=\write6
@@ -1076,28 +1076,28 @@ No file abntex2-modelo-relatorio-tecnico.ind.
 \tf@toc=\write8
 \openout8 = `abntex2-modelo-relatorio-tecnico.toc'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 381.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 381.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 399.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 399.
  (./abntex2-modelo-relatorio-tecnico.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 381.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 381.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 399.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 399.
 Package rerunfilecheck Info: File `abntex2-modelo-relatorio-tecnico.brf' has no
 t changed.
 (rerunfilecheck)             Checksum: 61173EBB85EC13B814AF7AD0ED48E4E9;89.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 381.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 399.
  )
 (\end occurred inside a group at level 1)
 
 ### simple group (level 1) entered at line 210 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 15279 strings out of 481239
- 239361 string characters out of 5920377
- 742975 words of memory out of 5000000
- 30161 multiletter control sequences out of 15000+600000
- 596537 words of font info for 89 fonts, out of 8000000 for 9000
+ 15272 strings out of 481239
+ 239184 string characters out of 5920377
+ 743975 words of memory out of 5000000
+ 30148 multiletter control sequences out of 15000+600000
+ 596769 words of font info for 91 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 47i,13n,43p,774b,661s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 42i,16n,43p,774b,661s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/share/
 texmf/fonts/enc/dvips/lm/lm-mathex.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-
 ec.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/share/texmf/fon
@@ -1111,11 +1111,11 @@ lm/lmr12.pfb></usr/share/texmf/fonts/type1/public/lm/lmr8.pfb></usr/share/texmf
 s/type1/public/lm/lmss17.pfb></usr/share/texmf/fonts/type1/public/lm/lmssbx10.p
 fb></usr/share/texmf/fonts/type1/public/lm/lmsso12.pfb></usr/share/texmf/fonts/
 type1/public/lm/lmsy10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy8.pfb>
-Output written on abntex2-modelo-relatorio-tecnico.pdf (10 pages, 248378 bytes)
+Output written on abntex2-modelo-relatorio-tecnico.pdf (11 pages, 252010 bytes)
 .
 PDF statistics:
- 214 PDF objects out of 1000 (max. 8388607)
- 185 compressed objects within 2 object streams
- 39 named destinations out of 1000 (max. 500000)
- 23641 words of extra memory for PDF output out of 24883 (max. 10000000)
+ 224 PDF objects out of 1000 (max. 8388607)
+ 194 compressed objects within 2 object streams
+ 41 named destinations out of 1000 (max. 500000)
+ 23657 words of extra memory for PDF output out of 24883 (max. 10000000)
 

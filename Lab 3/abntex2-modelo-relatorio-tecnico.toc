@@ -11,7 +11,9 @@
 \contentsline {section}{\numberline {1.1}Espaço de Estados}{7}{section.1.1}%
 \contentsline {subsection}{\numberline {1.1.1}Controlabilidade}{8}{subsection.1.1.1}%
 \contentsline {subsection}{\numberline {1.1.2}Observabilidade}{8}{subsection.1.1.2}%
+\contentsline {section}{\numberline {1.2}Observadores de Estado}{8}{section.1.2}%
+\contentsline {section}{\numberline {1.3}Seguidor de Referência}{9}{section.1.3}%
 \vspace {\cftbeforechapterskip }
 \setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
-\contentsline {chapter}{\MakeTextUppercase {Refer\^encias}}{9}{section*.9}%
+\contentsline {chapter}{\MakeTextUppercase {Refer\^encias}}{10}{section*.9}%
 \vspace {\cftbeforechapterskip }
