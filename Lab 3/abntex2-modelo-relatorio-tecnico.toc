@@ -13,7 +13,14 @@
 \contentsline {subsection}{\numberline {1.1.2}Observabilidade}{8}{subsection.1.1.2}%
 \contentsline {section}{\numberline {1.2}Observadores de Estado}{8}{section.1.2}%
 \contentsline {section}{\numberline {1.3}Seguidor de Referência}{9}{section.1.3}%
+\setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
+\contentsline {chapter}{\chapternumberline {2}\MakeTextUppercase {Desenvolvimento}}{10}{chapter.2}%
+\contentsline {section}{\numberline {2.1}espaço pro 3A - Seguidor de Referência}{10}{section.2.1}%
+\contentsline {section}{\numberline {2.2}espaço pro 3B - Observadores de Estado}{10}{section.2.2}%
+\contentsline {section}{\numberline {2.3}espaço pro 3C - Seguidor de Referência com Estados Estimados}{10}{section.2.3}%
+\setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
+\contentsline {chapter}{\chapternumberline {3}\MakeTextUppercase {Conclusão}}{11}{chapter.3}%
 \vspace {\cftbeforechapterskip }
 \setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
-\contentsline {chapter}{\MakeTextUppercase {Refer\^encias}}{10}{section*.9}%
+\contentsline {chapter}{\MakeTextUppercase {Refer\^encias}}{12}{section*.9}%
 \vspace {\cftbeforechapterskip }
