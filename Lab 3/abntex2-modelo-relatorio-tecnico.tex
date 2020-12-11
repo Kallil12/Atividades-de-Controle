@@ -386,8 +386,35 @@ Na primeira experiência o objetivo era encontrar a representação em Espaço d
 
 A partir das características do sistema e modelo de variáveis de estado, um \textit{script} no Matlab foi criado, para que a fosse possível encontrar a matriz de estados do observador. Para ter bons resultados é importante escolher bons valores de polos para que o observador aproxime a estimativa.
 
+\begin{itemize}
+	\item INSERIR IMAGEM DO MATLAB
+	\item INSERIR O LISTING DO SCRIPT
+\end{itemize}
+
+Os experimentos para a construção do seguidor de referência começaram com os polos $-0,07$, $-0.14$ e $-0.21$, antes de continuar vale a pena dizer que apesar da diferença de $0.07$ entre eles, isso foi coincidência, em outros momentos testamos com valores diferentes e o experimento acontecia normalmente, mas esses três citados anteriormente foram um pouco mais fáceis de se trabalhar. Os resultados obtidos para os valores utilizados podem ser vistos a seguir:
+
+%\begin{figure}[h]
+%	\centering
+%	\includegraphics[scale=0.70]{planta.jpg}
+%	\caption{Planta PID simples}
+%   \label{fig:population}
+%\end{figure}
+
+No gráfico é possível notar que o tanque dois está chegando no \textit{setpoint}, mas de forma lenta. O sinal de controle não saturou, portanto o sinal que foi enviado para a bomba está correto.
+
+Continuamos, usando novos valores. Nos resultados, que seguem adiante, é possível ver que o nível do tanque 2 convergiu mais rapidamente para a referência, então é possível dizer que houve melhora no regime transitório, já o sinal de controle permaneceu saturado por X segundos antes de se estabilizar.
+
 \section{espaço pro 3B - Observadores de Estado}
-asdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdf
+Inicialmente usamos os polos em $-1$, obtendo os resultados das figuras X e X.
+%\ref{fig:population}
+
+%\begin{figure}[h]
+%	\centering
+%	\includegraphics[scale=0.70]{planta.jpg}
+%	\caption{Planta PID simples}
+%\end{figure}
+
+A partir dos gráficos X e X foi notado que para o tanque 1, o nível ficou distando do que era esperado
 
 \section{espaço pro 3C - Seguidor de Referência com Estados Estimados}
 asdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdf
