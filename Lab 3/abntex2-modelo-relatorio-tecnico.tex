@@ -63,6 +63,7 @@
 \usepackage{nameref}
 \usepackage{chngcntr}
 \usepackage{amsmath}            % para escrever matrizes
+\usepackage{listings}
 \counterwithin{equation}{chapter}
 \counterwithin{figure}{chapter}
 \counterwithin{table}{chapter}
@@ -373,60 +374,111 @@ Observador de Estado é um mecanismo usado para estimar os estados de um sistema
 	\dot{x} = A_r x_r \\ 
     r = C_r x_r
 	\end{split}
-\label{eqn:seguidor_ref}
+    \label{eqn:seguidor_ref}
 \end{equation}
 
 Na equação \ref{eqn:seguidor_ref} o $x_r$ é o sinal de referência.
 
 \chapter{Desenvolvimento}
 
-\section{espaço pro 3A - Seguidor de Referência}
+\section{Experiência 3A - Seguidor de Referência}
 
 Na primeira experiência o objetivo era encontrar a representação em Espaço de Estados do modelo apresentado, o desenvolvimento do projeto de um observador de estados, usando como ponto de partida o modelo obtido, realizando uma análise do comportamento do observador para os diversos polos implementados. Com isso em mãos, a primeira parte foi analisar a dinâmica do sistema de tanques usando as equações diferenciais para construir o modelo em Espaço de Estados. A partir disso fizemos a matriz de observabilidade e foi constatado que esse sistema é observável.
 
 A partir das características do sistema e modelo de variáveis de estado, um \textit{script} no Matlab foi criado, para que a fosse possível encontrar a matriz de estados do observador. Para ter bons resultados é importante escolher bons valores de polos para que o observador aproxime a estimativa.
 
-\begin{itemize}
-	\item INSERIR IMAGEM DO MATLAB
-	\item INSERIR O LISTING DO SCRIPT
-\end{itemize}
+Os experimentos para a construção do seguidor de referência começaram com os polos $-0,5$, $-1 + j$ e $-1 - j$, antes de continuar vale a pena dizer que apesar da diferença de $0.07$ entre eles, isso foi coincidência, em outros momentos testamos com valores diferentes e o experimento acontecia normalmente, mas esses três citados anteriormente foram um pouco mais fáceis de se trabalhar. Os resultados obtidos para os valores utilizados podem ser vistos nas figuras \ref{fig:nivel_3a_4} e na figura \ref{fig:sinal_3a_4}.
 
-Os experimentos para a construção do seguidor de referência começaram com os polos $-0,07$, $-0.14$ e $-0.21$, antes de continuar vale a pena dizer que apesar da diferença de $0.07$ entre eles, isso foi coincidência, em outros momentos testamos com valores diferentes e o experimento acontecia normalmente, mas esses três citados anteriormente foram um pouco mais fáceis de se trabalhar. Os resultados obtidos para os valores utilizados podem ser vistos a seguir:
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.20]{imagens/niveis_3a_4.png}
+	\caption{Nível da primeira tentativa}
+   \label{fig:nivel_3a_4}
+\end{figure}
 
-%\begin{figure}[h]
-%	\centering
-%	\includegraphics[scale=0.70]{planta.jpg}
-%	\caption{Planta PID simples}
-%   \label{fig:population}
-%\end{figure}
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.20]{imagens/sinal_3a_4.png}
+	\caption{Sinal da primeira tentativa}
+	\label{fig:sinal_3a_4}
+\end{figure}
 
-No gráfico é possível notar que o tanque dois está chegando no \textit{setpoint}, mas de forma lenta. O sinal de controle não saturou, portanto o sinal que foi enviado para a bomba está correto.
+No gráfico é possível notar que o tanque não está chegando no \textit{setpoint}, então a escolha dos polos não foi boa, além disso o sinal de controle saturou e não houve correção.
 
-Continuamos, usando novos valores. Nos resultados, que seguem adiante, é possível ver que o nível do tanque 2 convergiu mais rapidamente para a referência, então é possível dizer que houve melhora no regime transitório, já o sinal de controle permaneceu saturado por X segundos antes de se estabilizar.
+Na segunda tentativa foram usados os polos $-0,15$, $-0,5+0,5j$ e $-0,5-0,5j$, resultando nas imagens \ref{fig:nivel_3a_2} e \ref{fig:sinal_3a_2}.
 
-\section{espaço pro 3B - Observadores de Estado}
-Inicialmente usamos os polos em $-1$, obtendo os resultados das figuras X e X.
-%\ref{fig:population}
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.30]{imagens/niveis_3a_2.png}
+	\caption{Nível da segunda tentativa}
+	\label{fig:nivel_3a_2}
+\end{figure}
 
-%\begin{figure}[h]
-%	\centering
-%	\includegraphics[scale=0.70]{planta.jpg}
-%	\caption{Planta PID simples}
-%\end{figure}
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.30]{imagens/sinal_3a_2.png}
+	\caption{Sinal da segunda tentativa}
+	\label{fig:sinal_3a_2}
+\end{figure}
 
-A partir dos gráficos X e X foi notado que para o tanque 1, o nível ficou distando do que era esperado
+Continuamos, usando novos valores. Nos resultados, que seguem adiante, é possível ver que o nível do tanque 2 convergiu mais rapidamente para a referência, então houve melhora no regime transitório, já o sinal de controle permaneceu saturado por alguns segundos antes de se estabilizar. Usamos os polos $-0,1$, $-0,5 + 0,5j$ e $-0,5 - 0,5j$, e obtivemos os resultados vistos nas figuras \ref{fig:nivel_3a_1} e na \ref{fig:sinal_3a_1}.
 
+\begin{figure}[h]
+	\centering
+	\begin{minipage}{.5\textwidth}
+		\centering
+		\includegraphics[scale=0.28]{imagens/niveis_3a_1.png}
+		\caption{Nível do melhor modelo}
+		\label{fig:nivel_3a_1}
+	\end{minipage}%
+	\begin{minipage}{.5\textwidth}
+		\centering
+		\includegraphics[scale=0.28]{imagens/sinal_3a_1.png}
+		\caption{Sinal do melhor modelo}
+		\label{fig:sinal_3a_1}
+	\end{minipage}
+\end{figure}
+
+\clearpage
+\section{Experiência 3B - Observadores de Estado}
+
+Para iniciar os testes aplicamos nos polos os valores $-0,25-0,25j$ e $-0,25+0,25j$, obtivemos resultados ruins como pode ser visto nas figuras \ref{fig:erro_3b_1} e \ref{fig:saida_3b_1}. Nessa tentativa o erro vai pra infinito, mesmo com a saída estando, teoricamente, correta.
+
+\begin{figure}[h]
+	\centering
+	\begin{minipage}{.5\textwidth}
+		\centering
+		\includegraphics[scale=0.30]{imagens/erro_3b_1.png}
+		\caption{Erro estimado}
+		\label{fig:erro_3b_1}		
+	\end{minipage}%
+	\begin{minipage}{.5\textwidth}
+		\centering
+		\includegraphics[scale=0.30]{imagens/saida_3b_1.png}
+		\caption{Sinal de saída do primeiro teste}
+		\label{fig:saida_3b_1}		
+	\end{minipage}
+\end{figure}
+
+Por causa dos resultados ruins, continuamos realizando novos testes, e chegamos nos polos $0,03+0,3i$ e $0,03-0,3i$
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.40]{imagens/3b_niveis_4.png}
+	\caption{Gráfico do erro}
+	\label{fig:erro_3b_4}
+\end{figure}
+
+
+\clearpage
 \section{espaço pro 3C - Seguidor de Referência com Estados Estimados}
 asdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdf
 
 \chapter{Conclusão}
 
-%\begin{figure}[h]
-%	\centering
-%	\includegraphics[scale=0.70]{planta.jpg}
-%	\caption{Planta PID simples}
-%\end{figure}
+Os experimentos feitos permitiram que fossem aplicadas técnicas de controle de nível em um sistema de tanques, no início implementamos um observador de estados, após isso fizemos um seguidor de referência e por último um seguidor de referência com estados estimados, que é, basicamente, uma junção das duas primeiras técnicas.
 
+No observador de estados vimos o comportamento do sistema, e foi possível escolher o melhor conjunto de polos que conseguia se adaptar mais rapidamente ao sistema. No segundo experimento, que tratava de sistemas controláveis, vimos na teoria que se polos forem alocados na região de estabilidade, o erro se torna constante ou até nulo, e por isso são melhores para construir o seguidor de referência. A partir das análises do terceiro experimento notamos a importância de um observador de estados que esteja bem integrado ao sistema que deve ser controlado. Também é importante notar que a escolha de bons valores para os polos é essencial para que haja uma boa resposta do sistema, melhorando o desempenho, polos ruins toram o observador inadequado, atrapalhando bastante todo o trabalho numa planta industrial, por exemplo.
 
 \postextual
 
