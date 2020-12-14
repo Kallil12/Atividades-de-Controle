@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.8.24)  13 DEC 2020 00:26
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.8.24)  14 DEC 2020 20:44
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -801,30 +801,37 @@ File: listings.cfg 2019/09/10 1.8c listings configuration
 ))
 Package: listings 2019/09/10 1.8c (Carsten Heinz)
 
+(/usr/share/texlive/texmf-dist/tex/latex/wrapfig/wrapfig.sty
+\wrapoverhang=\dimen268
+\WF@size=\dimen269
+\c@WF@wrappedlines=\count353
+\WF@box=\box55
+\WF@everypar=\toks35
+Package: wrapfig 2003/01/31  v 3.6
+)
 (/usr/share/texlive/texmf-dist/tex/latex/tools/multicol.sty
 Package: multicol 2019/12/09 v1.8y multicolumn formatting (FMi)
-\c@tracingmulticols=\count353
-\mult@box=\box55
-\multicol@leftmargin=\dimen268
-\c@unbalance=\count354
-\c@collectmore=\count355
-\doublecol@number=\count356
-\multicoltolerance=\count357
-\multicolpretolerance=\count358
-\full@width=\dimen269
-\page@free=\dimen270
-\premulticols=\dimen271
-\postmulticols=\dimen272
+\c@tracingmulticols=\count354
+\mult@box=\box56
+\multicol@leftmargin=\dimen270
+\c@unbalance=\count355
+\c@collectmore=\count356
+\doublecol@number=\count357
+\multicoltolerance=\count358
+\multicolpretolerance=\count359
+\full@width=\dimen271
+\page@free=\dimen272
+\premulticols=\dimen273
+\postmulticols=\dimen274
 \multicolsep=\skip263
 \multicolbaselineskip=\skip264
-\partial@page=\box56
-\last@line=\box57
-\maxbalancingoverflow=\dimen273
-\mult@rightbox=\box58
-\mult@grightbox=\box59
-\mult@gfirstbox=\box60
-\mult@firstbox=\box61
-\@tempa=\box62
+\partial@page=\box57
+\last@line=\box58
+\maxbalancingoverflow=\dimen275
+\mult@rightbox=\box59
+\mult@grightbox=\box60
+\mult@gfirstbox=\box61
+\mult@firstbox=\box62
 \@tempa=\box63
 \@tempa=\box64
 \@tempa=\box65
@@ -861,22 +868,23 @@ Package: multicol 2019/12/09 v1.8y multicolumn formatting (FMi)
 \@tempa=\box96
 \@tempa=\box97
 \@tempa=\box98
-\c@minrows=\count359
-\c@columnbadness=\count360
-\c@finalcolumnbadness=\count361
-\last@try=\dimen274
-\multicolovershoot=\dimen275
-\multicolundershoot=\dimen276
-\mult@nat@firstbox=\box99
-\colbreak@box=\box100
-\mc@col@check@num=\count362
+\@tempa=\box99
+\c@minrows=\count360
+\c@columnbadness=\count361
+\c@finalcolumnbadness=\count362
+\last@try=\dimen276
+\multicolovershoot=\dimen277
+\multicolundershoot=\dimen278
+\mult@nat@firstbox=\box100
+\colbreak@box=\box101
+\mc@col@check@num=\count363
 )
 (/usr/share/texlive/texmf-dist/tex/latex/multirow/multirow.sty
 Package: multirow 2019/05/31 v2.5 Span multiple rows of a table
 \multirow@colwidth=\skip265
-\multirow@cntb=\count363
+\multirow@cntb=\count364
 \multirow@dima=\skip266
-\bigstrutjot=\dimen277
+\bigstrutjot=\dimen279
 )
 (/usr/share/texlive/texmf-dist/tex/latex/lipsum/lipsum.sty
 (/usr/share/texlive/texmf-dist/tex/latex/l3kernel/expl3.sty
@@ -884,15 +892,15 @@ Package: expl3 2020-02-14 L3 programming layer (loader)
 
 (/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdfmode.def
 File: l3backend-pdfmode.def 2020-02-03 L3 backend support: PDF mode
-\l__kernel_color_stack_int=\count364
-\l__pdf_internal_box=\box101
+\l__kernel_color_stack_int=\count365
+\l__pdf_internal_box=\box102
 ))
 (/usr/share/texlive/texmf-dist/tex/latex/l3packages/xparse/xparse.sty
 Package: xparse 2020-02-14 L3 Experimental document command parser
-\l__xparse_current_arg_int=\count365
-\g__xparse_grabber_int=\count366
-\l__xparse_m_args_int=\count367
-\l__xparse_v_nesting_int=\count368
+\l__xparse_current_arg_int=\count366
+\g__xparse_grabber_int=\count367
+\l__xparse_m_args_int=\count368
+\l__xparse_v_nesting_int=\count369
 )
 Package: lipsum 2019/01/02 v2.2 150 paragraphs of Lorem Ipsum dummy text
 
@@ -908,8 +916,8 @@ Package: abntex2cite 2018/11/24 v-1.9.7 abnTeX2
 (/usr/share/texlive/texmf-dist/tex/latex/abntex2/abntex2abrev.sty)
 \minimumbiblabelwidth=\skip267
 \ABCIauxlen=\skip268
-\c@ABCIaux=\count369
-\c@ABCImax=\count370
+\c@ABCIaux=\count370
+\c@ABCImax=\count371
 
 (/usr/share/texlive/texmf-dist/tex/generic/iftex/ifpdf.sty
 Package: ifpdf 2019/10/25 v3.4 ifpdf legacy package. Use iftex instead.
@@ -923,23 +931,23 @@ Package: relsize 2013/03/29 ver 4.1
 \biblabelsep=\skip269
 LaTeX Info: Redefining \newblock on input line 591.
 LaTeX Info: Redefining \cite on input line 618.
-\ABCItoken=\toks35
+\ABCItoken=\toks36
 )
-Package color Info: Redefining color blue on input line 140.
+Package color Info: Redefining color blue on input line 141.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\new@ifnextchar' on input line 157.
+(hyperref)                removing `\new@ifnextchar' on input line 158.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\new@ifnextchar' on input line 157.
+(hyperref)                removing `\new@ifnextchar' on input line 158.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\new@ifnextchar' on input line 157.
+(hyperref)                removing `\new@ifnextchar' on input line 158.
 
-Package hyperref Info: Option `colorlinks' set `true' on input line 157.
+Package hyperref Info: Option `colorlinks' set `true' on input line 158.
 \abntex2-modelo-relatorio-tecnico@idxfile=\write4
 \openout4 = `abntex2-modelo-relatorio-tecnico.idx'.
 
@@ -947,46 +955,46 @@ Writing index file abntex2-modelo-relatorio-tecnico.idx
 (./abntex2-modelo-relatorio-tecnico.aux)
 \openout1 = `abntex2-modelo-relatorio-tecnico.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 180.
-LaTeX Font Info:    ... okay on input line 180.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 180.
-LaTeX Font Info:    ... okay on input line 180.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 180.
-LaTeX Font Info:    ... okay on input line 180.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 180.
-LaTeX Font Info:    ... okay on input line 180.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 180.
-LaTeX Font Info:    ... okay on input line 180.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 180.
-LaTeX Font Info:    ... okay on input line 180.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 180.
-LaTeX Font Info:    ... okay on input line 180.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 180.
-LaTeX Font Info:    ... okay on input line 180.
-\AtBeginShipoutBox=\box102
-Package hyperref Info: Link coloring ON on input line 180.
-LaTeX Info: Redefining \ref on input line 180.
-LaTeX Info: Redefining \pageref on input line 180.
-LaTeX Info: Redefining \nameref on input line 180.
-LaTeX Info: Redefining \degres on input line 180.
-LaTeX Info: Redefining \dots on input line 180.
-LaTeX Info: Redefining \up on input line 180.
-\myptabbox=\box103
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 181.
+LaTeX Font Info:    ... okay on input line 181.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 181.
+LaTeX Font Info:    ... okay on input line 181.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 181.
+LaTeX Font Info:    ... okay on input line 181.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 181.
+LaTeX Font Info:    ... okay on input line 181.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 181.
+LaTeX Font Info:    ... okay on input line 181.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 181.
+LaTeX Font Info:    ... okay on input line 181.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 181.
+LaTeX Font Info:    ... okay on input line 181.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 181.
+LaTeX Font Info:    ... okay on input line 181.
+\AtBeginShipoutBox=\box103
+Package hyperref Info: Link coloring ON on input line 181.
+LaTeX Info: Redefining \ref on input line 181.
+LaTeX Info: Redefining \pageref on input line 181.
+LaTeX Info: Redefining \nameref on input line 181.
+LaTeX Info: Redefining \degres on input line 181.
+LaTeX Info: Redefining \dots on input line 181.
+LaTeX Info: Redefining \up on input line 181.
+\myptabbox=\box104
 \myptabboxwidth=\skip270
 
 (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count371
-\scratchdimen=\dimen278
-\scratchbox=\box104
-\nofMPsegments=\count372
-\nofMParguments=\count373
-\everyMPshowfont=\toks36
-\MPscratchCnt=\count374
-\MPscratchDim=\dimen279
-\MPnumerator=\count375
-\makeMPintoPDFobject=\count376
-\everyMPtoPDFconversion=\toks37
+\scratchcounter=\count372
+\scratchdimen=\dimen280
+\scratchbox=\box105
+\nofMPsegments=\count373
+\nofMParguments=\count374
+\everyMPshowfont=\toks37
+\MPscratchCnt=\count375
+\MPscratchDim=\dimen281
+\MPnumerator=\count376
+\makeMPintoPDFobject=\count377
+\everyMPtoPDFconversion=\toks38
 ) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
@@ -996,14 +1004,14 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-LaTeX Info: Redefining \microtypecontext on input line 180.
+LaTeX Info: Redefining \microtypecontext on input line 181.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
 Package microtype Info: Automatic font expansion enabled (level 2),
 (microtype)             stretch: 20, shrink: 20, step: 1, non-selected.
 Package microtype Info: Using default expansion set `basictext'.
-LaTeX Info: Redefining \showhyphens on input line 180.
+LaTeX Info: Redefining \showhyphens on input line 181.
 Package microtype Info: No adjustment of tracking.
 Package microtype Info: No adjustment of interword spacing.
 Package microtype Info: No adjustment of character kerning.
@@ -1012,9 +1020,9 @@ Package microtype Info: No adjustment of character kerning.
 File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman 
 (RS)
 )
-\c@lstlisting=\count377
+\c@lstlisting=\count378
 LaTeX Font Info:    Trying to load font information for T1+lmss on input line 1
-97.
+98.
 
 (/usr/share/texmf/tex/latex/lm/t1lmss.fd
 File: t1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
@@ -1027,39 +1035,39 @@ Package microtype Info: Loading generic protrusion settings for font family
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
 LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 2
-06.
+07.
  (/usr/share/texmf/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OML+lmm on input line 2
-06.
+07.
 
 (/usr/share/texmf/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 
-206.
+207.
 
 (/usr/share/texmf/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 
-206.
+207.
 
 (/usr/share/texmf/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 206.
+(Font)              <12> on input line 207.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 206.
+(Font)              <8> on input line 207.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 206.
+(Font)              <6> on input line 207.
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.206 
+l.207 
        [1
 
 
@@ -1079,80 +1087,107 @@ l.206
 
 ]
 LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <12> not available
-(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 342.
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 343.
  [8] [9]
-<imagens/niveis_3a_4.png, id=136, 1145.27875pt x 872.25874pt>
-File: imagens/niveis_3a_4.png Graphic file (type png)
-<use imagens/niveis_3a_4.png>
-Package pdftex.def Info: imagens/niveis_3a_4.png  used on input line 394.
-(pdftex.def)             Requested size: 229.05168pt x 174.44865pt.
-<imagens/sinal_3a_4.png, id=138, 1397.22pt x 878.28125pt>
-File: imagens/sinal_3a_4.png Graphic file (type png)
-<use imagens/sinal_3a_4.png>
-Package pdftex.def Info: imagens/sinal_3a_4.png  used on input line 401.
-(pdftex.def)             Requested size: 279.43906pt x 175.65314pt.
+<imagens/3A_1_niveis.png, id=142, 579.16376pt x 320.19624pt>
+File: imagens/3A_1_niveis.png Graphic file (type png)
+<use imagens/3A_1_niveis.png>
+Package pdftex.def Info: imagens/3A_1_niveis.png  used on input line 393.
+(pdftex.def)             Requested size: 260.62128pt x 144.08698pt.
 
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-<imagens/niveis_3a_2.png, id=141, 828.09375pt x 591.20876pt>
-File: imagens/niveis_3a_2.png Graphic file (type png)
-<use imagens/niveis_3a_2.png>
-Package pdftex.def Info: imagens/niveis_3a_2.png  used on input line 412.
-(pdftex.def)             Requested size: 248.43004pt x 177.36398pt.
-[10
-
- <./imagens/niveis_3a_4.png>]
-<imagens/sinal_3a_2.png, id=147, 613.29124pt x 819.06pt>
-File: imagens/sinal_3a_2.png Graphic file (type png)
-<use imagens/sinal_3a_2.png>
-Package pdftex.def Info: imagens/sinal_3a_2.png  used on input line 419.
-(pdftex.def)             Requested size: 183.98878pt x 245.7199pt.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-<imagens/niveis_3a_1.png, id=150, 817.0525pt x 530.98375pt>
-File: imagens/niveis_3a_1.png Graphic file (type png)
-<use imagens/niveis_3a_1.png>
-Package pdftex.def Info: imagens/niveis_3a_1.png  used on input line 430.
-(pdftex.def)             Requested size: 228.77315pt x 148.67442pt.
-
-Overfull \hbox (1.27315pt too wide) in paragraph at lines 430--431
+Overfull \hbox (33.12128pt too wide) in paragraph at lines 393--394
  [][] 
  []
 
-<imagens/sinal_3a_1.png, id=151, 774.895pt x 793.96625pt>
-File: imagens/sinal_3a_1.png Graphic file (type png)
-<use imagens/sinal_3a_1.png>
-Package pdftex.def Info: imagens/sinal_3a_1.png  used on input line 436.
-(pdftex.def)             Requested size: 216.96912pt x 222.30904pt.
+<imagens/3A_1_sinal_controle.png, id=144, 222.8325pt x 336.25626pt>
+File: imagens/3A_1_sinal_controle.png Graphic file (type png)
+<use imagens/3A_1_sinal_controle.png>
+Package pdftex.def Info: imagens/3A_1_sinal_controle.png  used on input line 39
+9.
+(pdftex.def)             Requested size: 100.2737pt x 151.3139pt.
+<imagens/3A_2_niveis.png, id=148, 422.57875pt x 321.2pt>
+File: imagens/3A_2_niveis.png Graphic file (type png)
+<use imagens/3A_2_niveis.png>
+Package pdftex.def Info: imagens/3A_2_niveis.png  used on input line 411.
+(pdftex.def)             Requested size: 190.15868pt x 144.53867pt.
+<imagens/3A_2_sinal_controle.png, id=149, 270.00874pt x 400.49625pt>
+File: imagens/3A_2_sinal_controle.png Graphic file (type png)
+<use imagens/3A_2_sinal_controle.png>
+Package pdftex.def Info: imagens/3A_2_sinal_controle.png  used on input line 41
+7.
+(pdftex.def)             Requested size: 121.5028pt x 180.22165pt.
+[10
+
+ <./imagens/3A_1_niveis.png> <./imagens/3A_1_sinal_controle.png> <./imagens/3A_
+2_niveis.png> <./imagens/3A_2_sinal_controle.png>]
+<imagens/3A_3_niveis.png, id=161, 385.44pt x 485.815pt>
+File: imagens/3A_3_niveis.png Graphic file (type png)
+<use imagens/3A_3_niveis.png>
+Package pdftex.def Info: imagens/3A_3_niveis.png  used on input line 429.
+(pdftex.def)             Requested size: 173.4464pt x 218.61473pt.
+<imagens/3A_3_sinal_controle.png, id=162, 323.2075pt x 485.815pt>
+File: imagens/3A_3_sinal_controle.png Graphic file (type png)
+<use imagens/3A_3_sinal_controle.png>
+Package pdftex.def Info: imagens/3A_3_sinal_controle.png  used on input line 43
+5.
+(pdftex.def)             Requested size: 145.44203pt x 218.61473pt.
+ [11 <./imagens/3A_3_niveis.png> <./imagens/3A_3_sinal_controle.png>]
+<imagens/3B_1_erro.png, id=170, 443.6575pt x 577.15625pt>
+File: imagens/3B_1_erro.png Graphic file (type png)
+<use imagens/3B_1_erro.png>
+Package pdftex.def Info: imagens/3B_1_erro.png  used on input line 448.
+(pdftex.def)             Requested size: 199.64401pt x 259.71791pt.
+<imagens/3B_2_erro.png, id=172, 504.88625pt x 383.4325pt>
+File: imagens/3B_2_erro.png Graphic file (type png)
+<use imagens/3B_2_erro.png>
+Package pdftex.def Info: imagens/3B_2_erro.png  used on input line 460.
+(pdftex.def)             Requested size: 227.1967pt x 172.54303pt.
+ [12
+
+ <./imagens/3B_2_erro.png> <./imagens/3B_1_erro.png>]
+<imagens/3C_1_niveis.png, id=182, 606.265pt x 373.395pt>
+File: imagens/3C_1_niveis.png Graphic file (type png)
+<use imagens/3C_1_niveis.png>
+Package pdftex.def Info: imagens/3C_1_niveis.png  used on input line 474.
+(pdftex.def)             Requested size: 272.81673pt x 168.0262pt.
+
+Overfull \hbox (45.31673pt too wide) in paragraph at lines 474--475
+ [][] 
+ []
+
+<imagens/3C_1_sinal_controle.png, id=183, 608.2725pt x 383.4325pt>
+File: imagens/3C_1_sinal_controle.png Graphic file (type png)
+<use imagens/3C_1_sinal_controle.png>
+Package pdftex.def Info: imagens/3C_1_sinal_controle.png  used on input line 48
+0.
+(pdftex.def)             Requested size: 273.7201pt x 172.54303pt.
+
+Overfull \hbox (46.2201pt too wide) in paragraph at lines 480--481
+ [][] 
+ []
+
+<imagens/3C_2_niveis.png, id=188, 604.2575pt x 388.45125pt>
+File: imagens/3C_2_niveis.png Graphic file (type png)
+<use imagens/3C_2_niveis.png>
+Package pdftex.def Info: imagens/3C_2_niveis.png  used on input line 495.
+(pdftex.def)             Requested size: 271.91336pt x 174.80144pt.
+
+Overfull \hbox (44.41336pt too wide) in paragraph at lines 495--496
+ [][] 
+ []
+
+File: imagens/3A_2_sinal_controle.png Graphic file (type png)
+<use imagens/3A_2_sinal_controle.png>
+Package pdftex.def Info: imagens/3A_2_sinal_controle.png  used on input line 50
+1.
+(pdftex.def)             Requested size: 121.5028pt x 180.22165pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[11 <./imagens/sinal_3a_4.png> <./imagens/niveis_3a_2.png>] [12 <./imagens/sina
-l_3a_2.png> <./imagens/niveis_3a_1.png> <./imagens/sinal_3a_1.png>]
-<imagens/erro_3b_1.png, id=169, 239.89626pt x 459.7175pt>
-File: imagens/erro_3b_1.png Graphic file (type png)
-<use imagens/erro_3b_1.png>
-Package pdftex.def Info: imagens/erro_3b_1.png  used on input line 451.
-(pdftex.def)             Requested size: 71.96942pt x 137.9163pt.
-<imagens/saida_3b_1.png, id=170, 753.5653pt x 363.60844pt>
-File: imagens/saida_3b_1.png Graphic file (type png)
-<use imagens/saida_3b_1.png>
-Package pdftex.def Info: imagens/saida_3b_1.png  used on input line 457.
-(pdftex.def)             Requested size: 226.07133pt x 109.08336pt.
-<imagens/3b_niveis_4.png, id=171, 753.5653pt x 363.60844pt>
-File: imagens/3b_niveis_4.png Graphic file (type png)
-<use imagens/3b_niveis_4.png>
-Package pdftex.def Info: imagens/3b_niveis_4.png  used on input line 467.
-(pdftex.def)             Requested size: 301.42078pt x 145.4408pt.
- [13
+[13
 
- <./imagens/erro_3b_1.png> <./imagens/saida_3b_1.png (PNG copy)> <./imagens/3b_
-niveis_4.png (PNG copy)>] [14
-
-] (./abntex2-modelo-relatorio-tecnico.bbl
+ <./imagens/3C_1_niveis.png> <./imagens/3C_1_sinal_controle.png>] [14 <./imagen
+s/3C_2_niveis.png>] (./abntex2-modelo-relatorio-tecnico.bbl
 (./abntex2-modelo-relatorio-tecnico.brf)
 \tf@brf=\write5
 \openout5 = `abntex2-modelo-relatorio-tecnico.brf'.
@@ -1175,28 +1210,28 @@ No file abntex2-modelo-relatorio-tecnico.ind.
 \tf@toc=\write8
 \openout8 = `abntex2-modelo-relatorio-tecnico.toc'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 494.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 494.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 524.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 524.
  (./abntex2-modelo-relatorio-tecnico.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 494.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 494.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 524.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 524.
 Package rerunfilecheck Info: File `abntex2-modelo-relatorio-tecnico.brf' has no
 t changed.
 (rerunfilecheck)             Checksum: 61173EBB85EC13B814AF7AD0ED48E4E9;89.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 494.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 524.
  )
 (\end occurred inside a group at level 1)
 
-### simple group (level 1) entered at line 211 ({)
+### simple group (level 1) entered at line 212 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 16726 strings out of 481239
- 260146 string characters out of 5920377
- 762325 words of memory out of 5000000
- 31539 multiletter control sequences out of 15000+600000
- 597876 words of font info for 101 fonts, out of 8000000 for 9000
+ 16828 strings out of 481239
+ 261781 string characters out of 5920377
+ 763539 words of memory out of 5000000
+ 31614 multiletter control sequences out of 15000+600000
+ 598917 words of font info for 110 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 42i,16n,43p,884b,665s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 42i,16n,43p,884b,685s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/share/
 texmf/fonts/enc/dvips/lm/lm-mathex.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-
 ec.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/share/texmf/fon
@@ -1210,11 +1245,11 @@ lm/lmr12.pfb></usr/share/texmf/fonts/type1/public/lm/lmr8.pfb></usr/share/texmf
 s/type1/public/lm/lmss17.pfb></usr/share/texmf/fonts/type1/public/lm/lmssbx10.p
 fb></usr/share/texmf/fonts/type1/public/lm/lmsso12.pfb></usr/share/texmf/fonts/
 type1/public/lm/lmsy10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy8.pfb>
-Output written on abntex2-modelo-relatorio-tecnico.pdf (17 pages, 423049 bytes)
+Output written on abntex2-modelo-relatorio-tecnico.pdf (17 pages, 537727 bytes)
 .
 PDF statistics:
- 322 PDF objects out of 1000 (max. 8388607)
- 269 compressed objects within 3 object streams
- 61 named destinations out of 1000 (max. 500000)
- 23742 words of extra memory for PDF output out of 24883 (max. 10000000)
+ 341 PDF objects out of 1000 (max. 8388607)
+ 282 compressed objects within 3 object streams
+ 64 named destinations out of 1000 (max. 500000)
+ 23752 words of extra memory for PDF output out of 24883 (max. 10000000)
 

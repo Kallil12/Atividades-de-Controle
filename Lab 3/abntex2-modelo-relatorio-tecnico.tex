@@ -64,6 +64,7 @@
 \usepackage{chngcntr}
 \usepackage{amsmath}            % para escrever matrizes
 \usepackage{listings}
+\usepackage{wrapfig}
 \counterwithin{equation}{chapter}
 \counterwithin{figure}{chapter}
 \counterwithin{table}{chapter}
@@ -383,96 +384,125 @@ Na equação \ref{eqn:seguidor_ref} o $x_r$ é o sinal de referência.
 
 \section{Experiência 3A - Seguidor de Referência}
 
-Na primeira experiência o objetivo era encontrar a representação em Espaço de Estados do modelo apresentado, o desenvolvimento do projeto de um observador de estados, usando como ponto de partida o modelo obtido, realizando uma análise do comportamento do observador para os diversos polos implementados. Com isso em mãos, a primeira parte foi analisar a dinâmica do sistema de tanques usando as equações diferenciais para construir o modelo em Espaço de Estados. A partir disso fizemos a matriz de observabilidade e foi constatado que esse sistema é observável.
-
-A partir das características do sistema e modelo de variáveis de estado, um \textit{script} no Matlab foi criado, para que a fosse possível encontrar a matriz de estados do observador. Para ter bons resultados é importante escolher bons valores de polos para que o observador aproxime a estimativa.
-
-Os experimentos para a construção do seguidor de referência começaram com os polos $-0,5$, $-1 + j$ e $-1 - j$, antes de continuar vale a pena dizer que apesar da diferença de $0.07$ entre eles, isso foi coincidência, em outros momentos testamos com valores diferentes e o experimento acontecia normalmente, mas esses três citados anteriormente foram um pouco mais fáceis de se trabalhar. Os resultados obtidos para os valores utilizados podem ser vistos nas figuras \ref{fig:nivel_3a_4} e na figura \ref{fig:sinal_3a_4}.
-
-\begin{figure}[h]
-	\centering
-	\includegraphics[scale=0.20]{imagens/niveis_3a_4.png}
-	\caption{Nível da primeira tentativa}
-   \label{fig:nivel_3a_4}
-\end{figure}
-
-\begin{figure}[h]
-	\centering
-	\includegraphics[scale=0.20]{imagens/sinal_3a_4.png}
-	\caption{Sinal da primeira tentativa}
-	\label{fig:sinal_3a_4}
-\end{figure}
-
-No gráfico é possível notar que o tanque não está chegando no \textit{setpoint}, então a escolha dos polos não foi boa, além disso o sinal de controle saturou e não houve correção.
-
-Na segunda tentativa foram usados os polos $-0,15$, $-0,5+0,5j$ e $-0,5-0,5j$, resultando nas imagens \ref{fig:nivel_3a_2} e \ref{fig:sinal_3a_2}.
-
-\begin{figure}[h]
-	\centering
-	\includegraphics[scale=0.30]{imagens/niveis_3a_2.png}
-	\caption{Nível da segunda tentativa}
-	\label{fig:nivel_3a_2}
-\end{figure}
-
-\begin{figure}[h]
-	\centering
-	\includegraphics[scale=0.30]{imagens/sinal_3a_2.png}
-	\caption{Sinal da segunda tentativa}
-	\label{fig:sinal_3a_2}
-\end{figure}
-
-Continuamos, usando novos valores. Nos resultados, que seguem adiante, é possível ver que o nível do tanque 2 convergiu mais rapidamente para a referência, então houve melhora no regime transitório, já o sinal de controle permaneceu saturado por alguns segundos antes de se estabilizar. Usamos os polos $-0,1$, $-0,5 + 0,5j$ e $-0,5 - 0,5j$, e obtivemos os resultados vistos nas figuras \ref{fig:nivel_3a_1} e na \ref{fig:sinal_3a_1}.
+Começamos essa experiência com os valores, nos polos, $0,07$, $0,14$ e $0,19$, utilizando três polos e não dois, obtivemos o que pode ser visto nas figuras \ref{fig:niveis_3A_1} e \ref{fig:sinal_3A_1}.
 
 \begin{figure}[h]
 	\centering
 	\begin{minipage}{.5\textwidth}
 		\centering
-		\includegraphics[scale=0.28]{imagens/niveis_3a_1.png}
-		\caption{Nível do melhor modelo}
-		\label{fig:nivel_3a_1}
+		\includegraphics[scale=0.45]{imagens/3A_1_niveis.png}
+		\caption{Nível do primeiro teste}
+		\label{fig:niveis_3A_1}		
 	\end{minipage}%
 	\begin{minipage}{.5\textwidth}
 		\centering
-		\includegraphics[scale=0.28]{imagens/sinal_3a_1.png}
-		\caption{Sinal do melhor modelo}
-		\label{fig:sinal_3a_1}
+		\includegraphics[scale=0.45]{imagens/3A_1_sinal_controle.png}
+		\caption{Sinal de controle}
+		\label{fig:sinal_3A_1}		
+	\end{minipage}
+\end{figure}
+
+É possível ver no gráfico \ref{fig:niveis_3A_1} que o tanque convergiu para o \textit{setpoint}, mas de forma lenta, e o sinal de controle ficou dentro dos parâmetros esperados. Passando para os valores $-0,23$, $-0,30$ e $-0,10$ encontramos o que pode ser visto nas figuras \ref{fig:niveis_3A_2} e \ref{fig:sinal_3A_2}.
+
+\begin{figure}[h]
+	\centering
+	\begin{minipage}{.5\textwidth}
+		\centering
+		\includegraphics[scale=0.45]{imagens/3A_2_niveis.png}
+		\caption{Nível do segundo teste}
+		\label{fig:niveis_3A_2}		
+	\end{minipage}%
+	\begin{minipage}{.5\textwidth}
+		\centering
+		\includegraphics[scale=0.45]{imagens/3A_2_sinal_controle.png}
+		\caption{Sinal de controle}
+		\label{fig:sinal_3A_2}		
+	\end{minipage}
+\end{figure}
+
+A partir desse teste é possível ver que o tanque também convergiu para a referência, porém sensivelmente mais rápido que o primeiro teste, o sinal permaneceu saturado por alguns segundos antes de estabilizar. Finalmente, usamos os polos $0,30+j$, $-0,30-j$ e $-0,10$, os resultados são apresentados a seguir nas figuras \ref{fig:niveis_3A_3} e \ref{fig:sinal_3A_3}, mas, de forma resumida, o nível chegou no objetivo mais rapidamente, e houve uma melhora no regime transitório. Também houve um \textit{overshoot} no sinal referente ao tanque 1. 
+
+\begin{figure}[h]
+	\centering
+	\begin{minipage}{.5\textwidth}
+		\centering
+		\includegraphics[scale=0.45]{imagens/3A_3_niveis.png}
+		\caption{Nível do terceiro teste}
+		\label{fig:niveis_3A_3}		
+	\end{minipage}%
+	\begin{minipage}{.5\textwidth}
+		\centering
+		\includegraphics[scale=0.45]{imagens/3A_3_sinal_controle.png}
+		\caption{Sinal de controle}
+		\label{fig:sinal_3A_3}		
 	\end{minipage}
 \end{figure}
 
 \clearpage
 \section{Experiência 3B - Observadores de Estado}
 
-Para iniciar os testes aplicamos nos polos os valores $-0,25-0,25j$ e $-0,25+0,25j$, obtivemos resultados ruins como pode ser visto nas figuras \ref{fig:erro_3b_1} e \ref{fig:saida_3b_1}. Nessa tentativa o erro vai pra infinito, mesmo com a saída estando, teoricamente, correta.
+Aqui serão comparados os valores reais e estimados para os tanques, e também os erros obtidos. O primeiro teste foi feito com os polos em $-0,5$ e $0,5$, resultando na figura \ref{fig:erro_3B_1}.
 
-\begin{figure}[h]
+\begin{wrapfigure}{r}{0.5\textwidth}
+	\begin{center}
+		\includegraphics[scale=0.45]{imagens/3B_1_erro.png}
+	\end{center}
+	\caption{Erro do primeiro teste}
+	\label{fig:erro_3B_1}
+\end{wrapfigure}
+
+A partir desse gráfico ficou claro que o nível do tanque 1, que é a linha azul, ficou muito distante do ideal, a linha de erro fica longe do \textit{setpoint}, porém o tanque 2 obteve um comportamento bom, tendo um erro praticamente nulo. Assim como os experimentos anteriores, suspeitamos que seria mais fácil realizar a modelagem com valores que envolvessem números complexos, então aplicamos os polos $-0,1 + 0,1j$ e $-0,1 - 0,1j$, que geraram a figura \ref{fig:erro_3B_2}.
+
+Na última tentativa ficou claro que existe uma proximidade muito grande entre os níveis real e esperado, fazendo com que o erro fique próximo de $0,5$, que é pequeno para o sistema.
+
+\begin{figure}
 	\centering
-	\begin{minipage}{.5\textwidth}
-		\centering
-		\includegraphics[scale=0.30]{imagens/erro_3b_1.png}
-		\caption{Erro estimado}
-		\label{fig:erro_3b_1}		
-	\end{minipage}%
-	\begin{minipage}{.5\textwidth}
-		\centering
-		\includegraphics[scale=0.30]{imagens/saida_3b_1.png}
-		\caption{Sinal de saída do primeiro teste}
-		\label{fig:saida_3b_1}		
-	\end{minipage}
+	\includegraphics[scale=0.45]{imagens/3B_2_erro.png}
+    \caption{Erro do último teste}
+	\label{fig:erro_3B_2}
 \end{figure}
-
-Por causa dos resultados ruins, continuamos realizando novos testes, e chegamos nos polos $0,03+0,3i$ e $0,03-0,3i$
-
-\begin{figure}[h]
-	\centering
-	\includegraphics[scale=0.40]{imagens/3b_niveis_4.png}
-	\caption{Gráfico do erro}
-	\label{fig:erro_3b_4}
-\end{figure}
-
 
 \clearpage
 \section{espaço pro 3C - Seguidor de Referência com Estados Estimados}
-asdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdf
+
+Nessa experiência o controle deve ser feito através do observador de estados da experiência 3A, e do controlador feito na experiência 3B. Iniciamos os testes com $-0,07$, $-0,18$, $-0,21$, $-0,3+0,1j$ e $-0,3-0,1j$, obtendo o que pode ser visto nas figuras \ref{fig:niveis_3C_1} e \ref{fig:sinal_3C_1}.
+
+\begin{figure}[h]
+	\centering
+	\begin{minipage}{.5\textwidth}
+		\centering
+		\includegraphics[scale=0.45]{imagens/3C_1_niveis.png}
+		\caption{Nível do tanque}
+		\label{fig:niveis_3C_1}		
+	\end{minipage}
+	\begin{minipage}{.5\textwidth}
+		\centering
+		\includegraphics[scale=0.45]{imagens/3C_1_sinal_controle.png}
+		\caption{Sinal de controle}
+		\label{fig:sinal_3C_1}		
+	\end{minipage}
+\end{figure}
+
+A figura \ref{fig:sinal_3C_1} apresenta um sinal suave, em que não houve saturação, já na figura \ref{fig:niveis_3C_1}, vemos que o tanque 2 converge para o \textit{setpoint} lentamente, enquanto que o tanque 1 apresenta um \textit{overshoot} antes de chegar na estabilidade. Essa modelagem já apresenta um comportamento muito bom e, teoricamente, já atende aos requisitos necessários.
+
+As experiências se desenvolveram ainda com mais alguns valores, nesse caso usamos $-0,15+0,3j$, $-0,15-0,3j$, $-0,85$, $-0,1+0,1j$ e 
+$-0,1-0,1j$. O gráfico \ref{fig:sinal_3C_2} apresenta um pico, que permanece saturado por alguns segundos e se estabiliza em seguida, no gráfico \ref{fig:niveis_3C_2} é possível ver uma melhora no regime transitório nos dois tanques, ou seja, o tempo de subida foi menor. Também vimos que o sinal do tanque 1 apresenta um \textit{overshoot} antes de estabilizar. 
+
+\begin{figure}[h]
+	\centering
+	\begin{minipage}{.5\textwidth}
+		\centering
+		\includegraphics[scale=0.45]{imagens/3C_2_niveis.png}
+		\caption{Nível do tanque}
+		\label{fig:niveis_3C_2}		
+	\end{minipage}%
+	\begin{minipage}{.5\textwidth}
+		\centering
+		\includegraphics[scale=0.45]{imagens/3A_2_sinal_controle.png}
+		\caption{Sinal de controle}
+		\label{fig:sinal_3C_2}		
+	\end{minipage}
+\end{figure}
 
 \chapter{Conclusão}
 

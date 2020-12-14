@@ -16,8 +16,8 @@
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
 \contentsline {chapter}{\chapternumberline {2}\MakeTextUppercase {Desenvolvimento}}{10}{chapter.2}%
 \contentsline {section}{\numberline {2.1}Experiência 3A - Seguidor de Referência}{10}{section.2.1}%
-\contentsline {section}{\numberline {2.2}Experiência 3B - Observadores de Estado}{13}{section.2.2}%
-\contentsline {section}{\numberline {2.3}espaço pro 3C - Seguidor de Referência com Estados Estimados}{14}{section.2.3}%
+\contentsline {section}{\numberline {2.2}Experiência 3B - Observadores de Estado}{12}{section.2.2}%
+\contentsline {section}{\numberline {2.3}espaço pro 3C - Seguidor de Referência com Estados Estimados}{13}{section.2.3}%
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
 \contentsline {chapter}{\chapternumberline {3}\MakeTextUppercase {Conclusão}}{15}{chapter.3}%
 \vspace {\cftbeforechapterskip }
